@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Clean Blog - Start Bootstrap Theme</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+  <!-- Custom styles for this template -->
+  <link href="css/clean-blog.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Start Bootstrap</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="post.html">Sample Post</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url('img/post-bg.jpg')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+            <h1>Install Official Chembl Web Client</h1>
+            <h2 class="subheading">Problems look mighty small from 150 miles up</h2>
+            <span class="meta">Posted by
+              <a href="#">Start Bootstrap</a>
+              on August 24, 2019</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Post Content -->
+  <article>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <p>
+How to install chembl_web_client. ChEMBL由欧洲生物信息研究所EMBL-EBI数据库运营维护的库，主要为管理编辑具有药物性质的生物活性分子，它汇集了化学、生物活性和基因组数据.
+introduction: What is CheMBL data base.
+
+![](/images/chembl1.png)
+
+First of all, let’s be clear, there is already a mature website you can use as above.
+However, it is still good if you want to have a better experience or are a regular user, the chembl_web_client is faster and easier to handle, especially when it comes to multiple compounds. And you can define more screening conditions if you use a web client instead a web browser. 
+
+Step 1: 
+
+First of first, you need to check if you have “pip” on your linux. 
+
+Pip is an install tool needed to install the chembl_web_client, so before we could go with our installation we have to have pip first.
+
+My linux system is Ubuntu 20.04, so the python is python3,  and there is no pip installed yet. Let’s install now as administrator
+
+sudo apt update  (input your password)
+
+sudo apt install python3-pip (input your password)
+
+after finish, 
+
+pip3 --version
+it looks like the next image. 
+![](/images/chembl2.png)
+NOTE: If you are using python2, the installing method will be slightly different, it won’t be discussed here.
+Step2:
+
+In your terminal, type 
+
+pip3 install chembl_webresource_client (note, use pip3, not pip)
+
+Make sure you don’t miss spell anything, please, including the bottom line.
+
+Wait for seconds or minite for the majic to happen…………….
+
+After finishing, there might be a warning message about environment variable PATH.
+
+
+![](/images/chembl3.png)
+
+Let’s fix it now. In the terminal, type 
+
+export PATH=/home/YOUR-NAME/.local/bin:$PATH
+
+you need to copy the absolute path from the yellow warning info, since my computer name is “q” and obviously should be different from yours. 
+
+Now let’s double check if the path has been included in $PATH, type
+
+echo $PATH 
+
+home/q/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+
+![](/images/chembl4.png)
+It shows the list already contains the previously warned path which for my system is “home/q/.local/bin”
+
+Now when moving ahead to importing the library, some unexpected errors happens again.
+
+q@q-S1-Pro-Series:~/Downloads$ import csv
+from chembl_webresource_client.new_client import new_client
+import-im6.q16: attempt to perform an operation not allowed by the security policy PS' @ error/constitute.c/IsCoderAuthorized/408.
+
+This error happens after it indicate import should be installed using the recommended 
+“sudo apt install XXX” and the first one was chosen. To be feel lucky, the third one also installed, and the error majicly disappeared. The image below shows the process of install the 3rd recommended “sudo apt install “ command. It may different in your system or this error might not happen.
+
+![](/images/chembl5.png)
+
+But the error still remains, though the “import XX” works, the “from chembl_webresource_client.new_client import new_client” failed. And it is decided to skip leaving for later solvation.
+
+Step 3. Now lets test a bit
+
+![](/images/chembl6.png)
+
+let’s type
+
+pushd ~/.local/bin 
+
+ls
+
+to check the 6 green executable modules we have just installed . Namely, the six are
+
+chembl_act / chembl_ids / chembl_m2t /chembl_sim / chembl_sub / chembl_t2m 
+
+Now use popd to go back the working folder. 
+
+At this stage, you are free to use these 6 command from anywhere in you computer, as the PATH has been properly set up in middle of Step2. 
+
+Type -help to get usage info, for example:
+
+type “ chembl_t2m -h” 
+
+![](/images/chembl7.png)
+
+From the help message info, we know “chembl_t2m” is used for finding multiple compounds for a certain target.
+
+Another example, imagin now you have a compound name "aspirin", you want to know the exact chembl ID
+
+try the following commamds
+$touch aspirin.txt
+$echo asporin > aspirin.txt
+$chembl_ids -i aspirin.txt -o aspirin_id
+
+after finish, if you use "vi aspirin_id", you will see the chembl ID is CHEMBL25. In this simple case, the speed of using the web_client and the web browser seems not improved much, but imagin when you got a thousand molecule names, it is obviously will be easier with this web_client, what you need to do is putting all the names into a singel .txt, and you will get another .txt listed all the cheml IDs.
+
+Let's try how to find protein target for a certain compound, still use aspirin as an example, go to command line, type:
+$ chembl_m2t -i id.txt -o 25 -s chembl_id -H # id.txt contains the aspirin id as CHEMBL25, 25 is  a random name I give the output, you can give any name. -H means
+#only human being related targets are of interested here.
+
+after press "ENTER" it will take several minites to give out the output named as 25, again, the name here is just name, you can name it aspirin_target if you wish.
+$ vi 25 # the next image is the output listing a lot protein IDs asscociated with UniProt database.
+
+![](/images/chembl9.png)
+
+
+</p>
+
+          
+          <p>Placeholder text by
+            <a href="http://spaceipsum.com/">Space Ipsum</a>. Photographs by
+            <a href="https://www.flickr.com/photos/nasacommons/">NASA on The Commons</a>.</p>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <hr>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <ul class="list-inline text-center">
+            <li class="list-inline-item">
+              <a href="#">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          </ul>
+          <p class="copyright text-muted">Copyright &copy; Your Website 2020</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="js/clean-blog.min.js"></script>
+
+</body>
+
+</html>
