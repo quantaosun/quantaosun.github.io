@@ -8,7 +8,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Clean Blog - Start Bootstrap Theme</title>
+  <title>Quantao's blog - Start Bootstrap Theme</title>
 
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -62,8 +62,8 @@
             <h1>Install Official Chembl Web Client</h1>
             <h2 class="subheading">Problems look mighty small from 150 miles up</h2>
             <span class="meta">Posted by
-              <a href="#">Start Bootstrap</a>
-              on August 24, 2019</span>
+              <a href="#">Quantao</a>
+              on December 04, 2020</span>
           </div>
         </div>
       </div>
@@ -76,90 +76,98 @@
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
           <p>
-How to install chembl_web_client. ChEMBL由欧洲生物信息研究所EMBL-EBI数据库运营维护的库，主要为管理编辑具有药物性质的生物活性分子，它汇集了化学、生物活性和基因组数据.
-introduction: What is CheMBL data base.
+How to install chembl_web_client. ChEMBL由欧洲生物信息研究所EMBL-EBI数据库运营维护的库，主要为管理编辑具有药物性质的生物活性分子，它汇集了化学、生物活性和基因组数据.<p/>
 
-![](/images/chembl1.png)
+<a href="#">
+            <img class="img-fluid" src="img/chembl1.png" alt="">
+            </a>
 
-First of all, let’s be clear, there is already a mature website you can use as above.
-However, it is still good if you want to have a better experience or are a regular user, the chembl_web_client is faster and easier to handle, especially when it comes to multiple compounds. And you can define more screening conditions if you use a web client instead a web browser. 
+<p>First of all, let’s be clear, there is already a mature website you can use as above. However, it is still good if you want to have a better  experience or are a regular user, the chembl_web_client is faster and easier to handle, especially when it comes to multiple compounds. And you can define more screening conditions if you use a web client instead a web browser. <p/>
 
-Step 1: 
+<h2> Step1 </h2>
 
-First of first, you need to check if you have “pip” on your linux. 
+<p>>First of first, you need to check if you have “pip” on your linux. 
 
 Pip is an install tool needed to install the chembl_web_client, so before we could go with our installation we have to have pip first.
 
-My linux system is Ubuntu 20.04, so the python is python3,  and there is no pip installed yet. Let’s install now as administrator
+My linux system is Ubuntu 20.04, so the python is python3,  and there is no pip installed yet. Let’s install now as administrator</p>
 
-sudo apt update  (input your password)
+<p>sudo apt update  (input your password)<p/>
 
-sudo apt install python3-pip (input your password)
+<p>sudo apt install python3-pip (input your password)</p>
 
 after finish, 
 
-pip3 --version
+<p>pip3 --version</p>
+
 it looks like the next image. 
-![](/images/chembl2.png)
-NOTE: If you are using python2, the installing method will be slightly different, it won’t be discussed here.
-Step2:
+<a href="#">
+            <img class="img-fluid" src="img/chembl2.png" alt="">
+            </a>
+<p>NOTE: If you are using python2, the installing method will be slightly different, it won’t be discussed here.</p>
+
+<h2>Step2</h2>
 
 In your terminal, type 
 
-pip3 install chembl_webresource_client (note, use pip3, not pip)
+<p>pip3 install chembl_webresource_client (note, use pip3, not pip)</p>
 
-Make sure you don’t miss spell anything, please, including the bottom line.
-
-Wait for seconds or minite for the majic to happen…………….
-
-After finishing, there might be a warning message about environment variable PATH.
+<p>Make sure you don’t miss spell anything, please, including the bottom line. After finishing, there might be a warning message about environment variable PATH.</p>
 
 
-![](/images/chembl3.png)
+<a href="#">
+            <img class="img-fluid" src="img/chembl3.png" alt="">
+            </a>
 
 Let’s fix it now. In the terminal, type 
 
-export PATH=/home/YOUR-NAME/.local/bin:$PATH
+<p>export PATH=/home/YOUR-NAME/.local/bin:$PATH</p>
 
 you need to copy the absolute path from the yellow warning info, since my computer name is “q” and obviously should be different from yours. 
 
 Now let’s double check if the path has been included in $PATH, type
 
-echo $PATH 
+<p>echo $PATH </p>
 
 home/q/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
 
-![](/images/chembl4.png)
-It shows the list already contains the previously warned path which for my system is “home/q/.local/bin”
+<a href="#">
+            <img class="img-fluid" src="img/chembl4.png" alt="">
+            </a>
+<p>It shows the list already contains the previously warned path which for my system is “home/q/.local/bin”</p>
 
 Now when moving ahead to importing the library, some unexpected errors happens again.
 
-q@q-S1-Pro-Series:~/Downloads$ import csv
+<p>q@q-S1-Pro-Series:~/Downloads$ import csv
 from chembl_webresource_client.new_client import new_client
-import-im6.q16: attempt to perform an operation not allowed by the security policy PS' @ error/constitute.c/IsCoderAuthorized/408.
+import-im6.q16: attempt to perform an operation not allowed by the security policy PS' @ error/constitute.c/IsCoderAuthorized/408.<p/>
 
-This error happens after it indicate import should be installed using the recommended 
-“sudo apt install XXX” and the first one was chosen. To be feel lucky, the third one also installed, and the error majicly disappeared. The image below shows the process of install the 3rd recommended “sudo apt install “ command. It may different in your system or this error might not happen.
+<p>This error happens after it indicate import should be installed using the recommended 
+“sudo apt install XXX” and the first one was chosen. To be feel lucky, the third one also installed, and the error majicly disappeared. The image below shows the process of install the 3rd recommended “sudo apt install “ command. It may different in your system or this error might not happen.<p/>
 
-![](/images/chembl5.png)
+<a href="#">
+            <img class="img-fluid" src="img/chembl5.png" alt="">
+            </a>
 
-But the error still remains, though the “import XX” works, the “from chembl_webresource_client.new_client import new_client” failed. And it is decided to skip leaving for later solvation.
+<p>But the error still remains, though the “import XX” works, the “from chembl_webresource_client.new_client import new_client” failed. And it is decided to skip leaving for later solvation.<p/>
 
-Step 3. Now lets test a bit
+<h2>Step 3. Now lets test a bit</h2>
 
-![](/images/chembl6.png)
+<a href="#">
+            <img class="img-fluid" src="img/chembl6.png" alt="">
+            </a>
 
 let’s type
 
-pushd ~/.local/bin 
+<p>pushd ~/.local/bin </p>
 
-ls
+<p>ls</p>
 
 to check the 6 green executable modules we have just installed . Namely, the six are
 
-chembl_act / chembl_ids / chembl_m2t /chembl_sim / chembl_sub / chembl_t2m 
+<p>chembl_act / chembl_ids / chembl_m2t /chembl_sim / chembl_sub / chembl_t2m<p/>
 
-Now use popd to go back the working folder. 
+Now use "popd" to go back the working folder. 
 
 At this stage, you are free to use these 6 command from anywhere in you computer, as the PATH has been properly set up in middle of Step2. 
 
@@ -167,35 +175,40 @@ Type -help to get usage info, for example:
 
 type “ chembl_t2m -h” 
 
-![](/images/chembl7.png)
+<a href="#">
+            <img class="img-fluid" src="img/chembl7.png" alt="">
+            </a>
 
 From the help message info, we know “chembl_t2m” is used for finding multiple compounds for a certain target.
 
 Another example, imagin now you have a compound name "aspirin", you want to know the exact chembl ID
 
 try the following commamds
-$touch aspirin.txt
+<p>$touch aspirin.txt
 $echo asporin > aspirin.txt
-$chembl_ids -i aspirin.txt -o aspirin_id
+$chembl_ids -i aspirin.txt -o aspirin_id</p>
 
-after finish, if you use "vi aspirin_id", you will see the chembl ID is CHEMBL25. In this simple case, the speed of using the web_client and the web browser seems not improved much, but imagin when you got a thousand molecule names, it is obviously will be easier with this web_client, what you need to do is putting all the names into a singel .txt, and you will get another .txt listed all the cheml IDs.
+<p>after finish, if you use "vi aspirin_id", you will see the chembl ID is CHEMBL25. In this simple case, the speed of using the web_client and the web browser seems not improved much, but imagin when you got a thousand molecule names, it is obviously will be easier with this web_client, what you need to do is putting all the names into a singel .txt, and you will get another .txt listed all the cheml IDs.</p>
 
-Let's try how to find protein target for a certain compound, still use aspirin as an example, go to command line, type:
-$ chembl_m2t -i id.txt -o 25 -s chembl_id -H # id.txt contains the aspirin id as CHEMBL25, 25 is  a random name I give the output, you can give any name. -H means
-#only human being related targets are of interested here.
+<p>Let's try how to find protein target for a certain compound, still use aspirin as an example, go to command line, type:</p>
+<p>$ chembl_m2t -i id.txt -o 25 -s chembl_id -H </p>
 
-after press "ENTER" it will take several minites to give out the output named as 25, again, the name here is just name, you can name it aspirin_target if you wish.
-$ vi 25 # the next image is the output listing a lot protein IDs asscociated with UniProt database.
+<p>id.txt contains the aspirin id as CHEMBL25, 25 is  a random name I give the output, you can give any name. -H means
+only human being related targets are of interested here.
 
-![](/images/chembl9.png)
+after press "ENTER" it will take several minites to give out the output named as 25, again, the name here is just name, you can name it aspirin_target if you wish.<p/>
+
+<p>$ vi 25 </p>
+
+the next image is the output listing a lot protein IDs asscociated with UniProt database.
 
 
+<a href="#">
+            <img class="img-fluid" src="img/chembl9.png" alt="">
+            </a>
 </p>
 
           
-          <p>Placeholder text by
-            <a href="http://spaceipsum.com/">Space Ipsum</a>. Photographs by
-            <a href="https://www.flickr.com/photos/nasacommons/">NASA on The Commons</a>.</p>
         </div>
       </div>
     </div>
