@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Clean Blog - Start Bootstrap Theme</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+  <!-- Custom styles for this template -->
+  <link href="css/clean-blog.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Start Bootstrap</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="post.html">Sample Post</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url('img/post-bg.jpg')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+            <h1>Peptide docking result can be optimised by a online server</h1>
+            <h2 class="subheading">Flex Pep Dock to improve the accuracy of flexible peptide docking</h2>
+            <span class="meta">Posted by
+              <a href="#">Quantao</a>
+              on December 10, 2020</span>
+              
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Post Content -->
+  <article>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <p> Peptide modelling is always more challenging when compared to small molecules. This primarily is due to the nature of the high flexibility of peptide. This blog introduce a online server called FlexPepDock which is designed to improve the peptide docking result.
+    <p>
+            <a href="#">
+            <img class="img-fluid" src="img/post8.0.png" alt="">
+            </a></p>
+          <p>For many drug like small molecules there are offten some kind of aromatic rings or heterocycles which means the whole molecule is rigid, while for peptide there are much more rotatable bonds from both the backbone and the side chain. The above image shows that with one more rotatable bonds comes with 36 more searching for the docking algorithums if 10 degree at one step, to cover the whole possibility of how might a  bond would be adopt.</p>
+            <p> Without no doubt, as the number of rotatable bonds increase, the steps of the docking software need to calculte just sour high quicker in a exponential manner</p>
+            <p> It is unrealistic to go through all these time-consuming steps in a common docking software like Auto Dock or Auto Dock Vina, and many more ohters. The output result should be further optimised to improve the accuracy, for example the <a href="http://flexpepdock.furmanlab.cs.huji.ac.il/">FlexPepDock</a> is such a platform.</p>
+            
+            <P> We are not going to dive deep to the mechanism of this protocal, but it should be fully aware this is not a peptide docking web server but a peptide docking output optimisation web server, which means you should do you peptide docking before hand by your in house software or ohter online dedicated tools for such purpose.
+            </P>  <h2>Step 1.Do you peptide docking some where else.</h2>
+            <p><a href="#">
+            <img class="img-fluid" src="img/post8.1.png" alt="">
+            </a>
+                The image shows that from a docking software or some online tools, one can get a general sense of how your peptide is likely to be bound to a certain protein. However, with all we have disscused before, the high flexibility of the peptide, together whith the fact that many docking algorithums do not consider the flexibility of the protein side chain, making the output confmation is not so trustful.
+            
+            </p>
+            <p> <h2> Step 2. Manuplate your docking result </h2><p/>
+            <p>
+            Now time for real game. Let's say you got 3 plausible peptide docking result from any kind of docking software. What you need to do is to check whether the peptide and the protein in your output does exists as an individual chain or they are intergreted to a single one,there should be a "A" or "B" for each of them if you can open the output in any text reader. Please mannually asign a different chain name if they are all labled as "A" or whatever a single letter chain name, to another different letter.</p>
+<p>
+            You also need to refer to any PDB file to make your output a good begining and a good end in any text tool, for example you may need to type words like "Module" or "End" </p>
+              <h2> Step 3. Submit the modified file to FlexPepDock</h2>
+            
+            <p> Now you just go through a quick resigter process on the web server and add your docking output to the server one by one. 
+                You are allowed to submit maximum 5 job at a time. You may need to wait for some time maybe 10 hours or a whole day until your job is done, depending on how long is the queue is.
+          
+                <a href="#">
+            <img class="img-fluid" src="img/post8.2.png" alt="">
+            </a>
+                Hope this image would give you some sense about before and after the FlexPepDock optimisation, it is obviously improved from a not aligned well position to a well aligned position  as per on the right.<p/>
+                
+        <h2> Further Reading</h2>
+            <p>
+            According to the offical illustration of the usage of this server, it is recommended that the output peptide backbone conformation should be with the range of  5.5 angstrom to the native conformation, so the server would gives out the final conformation falling within the range of 2.0 angstrom to native one. But it might not that useful message if you are testing a whole new peptide no one knows what on earth the native binding mode is.</p>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <hr>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <ul class="list-inline text-center">
+            <li class="list-inline-item">
+              <a href="#">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          </ul>
+          <p class="copyright text-muted">Copyright &copy; Your Website 2020</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="js/clean-blog.min.js"></script>
+
+</body>
+
+</html>
