@@ -177,5 +177,28 @@
   <script src="js/clean-blog.min.js"></script>
 
 </body>
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  var firebaseConfig = {
+    apiKey: "AIzaSyAwvMKIl51VOL3ylhhabX8W0Bg2jh1X7cA",
+    authDomain: "my-phd-poject.firebaseapp.com",
+    projectId: "my-phd-poject",
+    storageBucket: "my-phd-poject.appspot.com",
+    messagingSenderId: "321644397346",
+    appId: "1:321644397346:web:c592da4a8401be71e6db7b",
+    measurementId: "G-Z5EPP38GP0"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
 
 </html>
