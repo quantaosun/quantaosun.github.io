@@ -76,7 +76,7 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
-          <p> Peptide modelling is always more challenging when compared to small molecules. This primarily is due to the nature of the high flexibility of peptide. This blog introduce a online server called FlexPepDock which is designed to improve the peptide docking result.
+          <p> Peptide modeling is always more challenging when compared to small molecules. This primarily is due to the nature of the high flexibility of peptides. This blog introduces an online server called FlexPepDock which is designed to improve the peptide docking result.
     <p>
             <a href="#">
             <img class="img-fluid" src="img/post8.0.png" alt="">
@@ -85,17 +85,17 @@
             <p> Without no doubt, as the number of rotatable bonds increase, the steps of the docking software need to calculte just sour high quicker in a exponential manner</p>
             <p> It is unrealistic to go through all these time-consuming steps in a common docking software like Auto Dock or Auto Dock Vina, and many more ohters. The output result should be further optimised to improve the accuracy, for example the <a href="http://flexpepdock.furmanlab.cs.huji.ac.il/">FlexPepDock</a> is such a platform.</p>
             
-            <P> We are not going to dive deep to the mechanism of this protocal, but it should be fully aware this is not a peptide docking web server but a peptide docking output optimisation web server, which means you should do you peptide docking before hand by your in house software or ohter online dedicated tools for such purpose.
-            </P>  <h2>Step 1.Do you peptide docking some where else.</h2>
+            <P> We are not going to dive deep to the mechanism of this protocal, but it should be fully aware this is not a peptide docking web server but a peptide docking output optimisation web server, which means you should do you peptide docking before hand by your in house software or ohter online dedicated tools for such purpose.    </P>  
+            <h2>Step 1.Do you peptide docking some where else.</h2>
             <p><a href="#">
             <img class="img-fluid" src="img/post8.1.png" alt="">
             </a>
-                The image shows that from a docking software or some online tools, one can get a general sense of how your peptide is likely to be bound to a certain protein. However, with all we have disscused before, the high flexibility of the peptide, together whith the fact that many docking algorithums do not consider the flexibility of the protein side chain, making the output confmation is not so trustful.
+                The image shows that from docking software or some online tools, one can get a general sense of how your peptide is likely to be bound to a certain protein. However, with all we have discussed before, the high flexibility of the peptide, together with the fact that many docking algorithms do not consider the flexibility of the protein side-chain, making the output confirmation is not so trustful.
             
             </p>
             <p> <h2> Step 2. Manuplate your docking result </h2><p/>
             <p>
-            Now time for real game. Let's say you got 3 plausible peptide docking result from any kind of docking software. What you need to do is to check whether the peptide and the protein in your output does exists as an individual chain or they are intergreted to a single one,there should be a "A" or "B" for each of them if you can open the output in any text reader. Please mannually asign a different chain name if they are all labled as "A" or whatever a single letter chain name, to another different letter.</p>
+           Now time for real game. Let's say you got 3 plausible peptide docking result from any kind of docking software. What you need to do is to check whether the peptide and the protein in your output does exists as an individual chain or they are intergreted to a single one,there should be a "A" or "B" for each of them if you can open the output in any text reader. Please mannually asign a different chain name if they are all labled as "A" or whatever a single letter chain name, to another different letter.</p>
 <p>
             You also need to refer to any PDB file to make your output a good begining and a good end in any text tool, for example you may need to type words like "Module" or "End" </p>
               <h2> Step 3. Submit the modified file to FlexPepDock</h2>
@@ -106,11 +106,11 @@
                 <a href="#">
             <img class="img-fluid" src="img/post8.2.png" alt="">
             </a>
-                Hope this image would give you some sense about before and after the FlexPepDock optimisation, it is obviously improved from a not aligned well position to a well aligned position  as per on the right.<p/>
+                Hope this image would give you some sense about before and after the FlexPepDock optimization, it is improved from a not aligned well position to a well-aligned position  as per on the right.<p/>
                 
         <h2> Further Reading</h2>
             <p>
-            According to the offical illustration of the usage of this server, it is recommended that the output peptide backbone conformation should be with the range of  5.5 angstrom to the native conformation, so the server would gives out the final conformation falling within the range of 2.0 angstrom to native one. But it might not that useful message if you are testing a whole new peptide no one knows what on earth the native binding mode is.</p>
+            According to the official illustration of the usage of this server, it is recommended that the output peptide backbone confirmation should be with the range of  5.5 angstroms to the native conformation, so the server would give out the final conformation falling within the range of 2.0 angstrom to the native one. But it might not that useful message if you are testing a whole new peptide no one knows what on earth the native binding mode is.</p>
         </div>
       </div>
     </div>
