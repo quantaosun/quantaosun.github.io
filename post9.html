@@ -76,42 +76,44 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
-          <p> The carbonyl group, is a perfect electrophile, in this case, it is recognized as a partially positively charged group. But from some retrosynthetic plan, people found they already had an electrophile thus requiring the acyl group to act like an anion that needs to be partially negatively charged. 
+          <p> The carbonyl group, is a perfect electrophile, often, it is recognized as a partially positively charged group. But from some retrosynthetic plan, people found they already had an electrophile thus requiring the acyl group to act like an anion that needs to be partially negatively charged. 
     <p>
             <a href="#">
             <img class="img-fluid" src="img/post9.0.png" alt="">
             </a></p>
-          <p> <h2> TMSCN as  a masking group to acyl group</h2>
-          </p>
-            <p> Without no doubt, as the number of rotatable bonds increase, the steps of the docking software need to calculte just sour high quicker in a exponential manner</p>
-            <p> It is unrealistic to go through all these time-consuming steps in a common docking software like Auto Dock or Auto Dock Vina, and many more ohters. The output result should be further optimised to improve the accuracy, for example the <a href="http://flexpepdock.furmanlab.cs.huji.ac.il/">FlexPepDock</a> is such a platform.</p>
-            
-            <P> We are not going to dive deep to the mechanism of this protocal, but it should be fully aware this is not a peptide docking web server but a peptide docking output optimisation web server, which means you should do you peptide docking before hand by your in house software or ohter online dedicated tools for such purpose.
-            </P>  <h2>Step 1.Do you peptide docking some where else.</h2>
-            <p><a href="#">
-            <img class="img-fluid" src="img/post8.1.png" alt="">
-            </a>
-                The image shows that from a docking software or some online tools, one can get a general sense of how your peptide is likely to be bound to a certain protein. However, with all we have disscused before, the high flexibility of the peptide, together whith the fact that many docking algorithums do not consider the flexibility of the protein side chain, making the output confmation is not so trustful.
-            
-            </p>
-            <p> <h2> Step 2. Manuplate your docking result </h2><p/>
-            <p>
-            Now time for real game. Let's say you got 3 plausible peptide docking result from any kind of docking software. What you need to do is to check whether the peptide and the protein in your output does exists as an individual chain or they are intergreted to a single one,there should be a "A" or "B" for each of them if you can open the output in any text reader. Please mannually asign a different chain name if they are all labled as "A" or whatever a single letter chain name, to another different letter.</p>
-<p>
-            You also need to refer to any PDB file to make your output a good begining and a good end in any text tool, for example you may need to type words like "Module" or "End" </p>
-              <h2> Step 3. Submit the modified file to FlexPepDock</h2>
-            
-            <p> Now you just go through a quick resigter process on the web server and add your docking output to the server one by one. 
-                You are allowed to submit maximum 5 job at a time. You may need to wait for some time maybe 10 hours or a whole day until your job is done, depending on how long is the queue is.
           
-                <a href="#">
-            <img class="img-fluid" src="img/post8.2.png" alt="">
+            <p> Now let have a look at a simple retrosynthesis of a compound. There are many potential reactions we can apply here to obtain this compound. The simplest one maybe is the aldol condensation, if we break down between carbon 4 and 5.</p>
+            <p> <a href="#">
+            <img class="img-fluid" src="img/post9.1.png" alt="">
+            </a></p>
+            
+            <P>If we decide to break down carbon 3 and 2, things begin to be a bit complex, if you want to use metal, a reaction like Corey-Posner Reaction might be applied. But what if you don’t want to use metal? One can assume that the right-hand side subunit being an alkyl halogen, as an electrophile, while the left-hand side an acyl anion. The question is how could we obtain such a species in practice, given the acyl group’s positively charged nature. We need a potential reaction 3 as shown below.</P>
+            
+            <p><a href="#">
+            <img class="img-fluid" src="img/post9.2.png" alt="">
             </a>
-                Hope this image would give you some sense about before and after the FlexPepDock optimisation, it is obviously improved from a not aligned well position to a well aligned position  as per on the right.<p/>
-                
-        <h2> Further Reading</h2>
+            </p>
+            <p>One way to do this is taking TMSCN as a masking group by addition to the acyl group, which can then be deprotonated, serving as a negatively charged nucleophile instead of the electrophile. After the nucleophilic addition to alky halogen, it is then unmasked back to an acyl group.</p>
+           <p><a href="#">
+            <img class="img-fluid" src="img/post9.3.png" alt="">
+            </a></p>
+           <p>
+            As the above green box shows, we take the TMSCN masked anion as an acyl anion equivalent in practice. The reason why this could work nicely is partly due to the strong electron-withdrawing nature of the CN group, which can stabilize the negative charge after LDA deprotonation.</p>
             <p>
-            According to the offical illustration of the usage of this server, it is recommended that the output peptide backbone conformation should be with the range of  5.5 angstrom to the native conformation, so the server would gives out the final conformation falling within the range of 2.0 angstrom to native one. But it might not that useful message if you are testing a whole new peptide no one knows what on earth the native binding mode is.</p>
+            This strategy was applied in the total synthesis of (-)-Curvulamine by <a href="http://www.cchem.berkeley.edu/tjm/Lab_website/Home.html">Maimone Group</a> at MIT. We only show part of their synthesis plan involves our topic here.
+                <p><a href="#">
+            <img class="img-fluid" src="img/post9.4.png" alt="">
+            </a></p>
+            
+           <p>What they need is an acyl group similar to what we have discussed above, they also adopted the same strategy, using TMSCN as a masking group, in a three-step one-pot reaction, first an SN2 alkylation to 2-methyl pyrrole N atom, then a reduction from ester to aldehyde, followed by the TMSCN masking. </p>
+        
+            <p>For the whole process of Curvulamine synthesis, you can read <a href="https://pubs.acs.org/doi/10.1021/jacs.9b12546 ">the total synthesis of (-)-Curvulamine.</a> 
+            </p>
+
+
+
+          
+      
         </div>
       </div>
     </div>
