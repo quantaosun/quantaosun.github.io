@@ -82,7 +82,7 @@ How to install chembl_web_client. ChEMBL由欧洲生物信息研究所EMBL-EBI�
             <img class="img-fluid" src="img/chembl1.png" alt="">
             </a>
 
-<p>First of all, let’s be clear, there is already a mature <a href="https://www.ebi.ac.uk/chembl/">CHEMBL database</a> website you can use as above. However, it is still good if you want to have a better  experience or are a regular user, the chembl_web_client is faster and easier to handle, especially when it comes to multiple compounds. And you can define more screening conditions if you use a web client instead a web browser. <p/>
+First of all, let’s be clear, there is already a mature <a href="https://www.ebi.ac.uk/chembl/">CHEMBL database</a> website you can use as above. However, it is still good if you want to have a better experience or are a regular user, the chembl_web_client is faster and easier to handle, especially when it comes to multiple compounds. And you can define more screening conditions if you use a web client instead of a web browser. <p/>
 
 <h2> Step1 </h2>
 
@@ -90,7 +90,7 @@ How to install chembl_web_client. ChEMBL由欧洲生物信息研究所EMBL-EBI�
 
 Pip is an install tool needed to install the chembl_web_client, so before we could go with our installation we have to have pip first. Alternatively, you could head to <a href="https://github.com/chembl/chembl_webresource_client">chembl_web_client in Github</a> for more reading.
 
-My linux system is Ubuntu 20.04, so the python is python3,  and there is no pip installed yet. Let’s install now as administrator</p>
+My Linux system is Ubuntu 20.04, so the python is python3,  and there is no pip installed yet. Let’s install now as administrator</p>
 
 <p>sudo apt update  (input your password)<p/>
 
@@ -123,7 +123,7 @@ Let’s fix it now. In the terminal, type
 
 <p>export PATH=/home/YOUR-NAME/.local/bin:$PATH</p>
 
-you need to copy the absolute path from the yellow warning info, since my computer name is “q” and obviously should be different from yours. 
+you need to copy the absolute path from the yellow warning info since my computer name is “q” and obviously should be different from yours.
 
 Now let’s double check if the path has been included in $PATH, type
 
@@ -142,14 +142,14 @@ Now when moving ahead to importing the library, some unexpected errors happens a
 from chembl_webresource_client.new_client import new_client
 import-im6.q16: attempt to perform an operation not allowed by the security policy PS' @ error/constitute.c/IsCoderAuthorized/408.<p/>
 
-<p>This error happens after it indicate import should be installed using the recommended 
-“sudo apt install XXX” and the first one was chosen. To be feel lucky, the third one also installed, and the error majicly disappeared. The image below shows the process of install the 3rd recommended “sudo apt install “ command. It may different in your system or this error might not happen.<p/>
+<p>This error happens after it indicates import should be installed using the recommended 
+“sudo apt install XXX” and the first one was chosen. To feel lucky, the third one was also installed, and the error magically disappeared. The image below shows the process of install the 3rd recommended “sudo apt install “ command. It may differ in your system or this error might not happen.<p/>
 
 <a href="#">
             <img class="img-fluid" src="img/chembl5.png" alt="">
             </a>
 
-<p>But the error still remains, though the “import XX” works, the “from chembl_webresource_client.new_client import new_client” failed. And it is decided to skip leaving for later solvation.<p/>
+<p>But the error remains, though the “import XX” works, the “from chembl_webresource_client.new_client import new_client” failed. And it is decided to skip leaving for later solvation.<p/>
 
 <h2>Step 3. Now lets test a bit</h2>
 
@@ -169,7 +169,7 @@ to check the 6 green executable modules we have just installed . Namely, the six
 
 Now use "popd" to go back the working folder. 
 
-At this stage, you are free to use these 6 command from anywhere in you computer, as the PATH has been properly set up in middle of Step2. 
+At this stage, you are free to use these 6 commands from anywhere in your computer, as the PATH has been properly set up in the middle of Step2.
 
 Type -help to get usage info, for example:
 
@@ -181,20 +181,22 @@ type “ chembl_t2m -h”
 
 From the help message info, we know “chembl_t2m” is used for finding multiple compounds for a certain target.
 
-Another example, imagin now you have a compound name "aspirin", you want to know the exact chembl ID
+Another example, imagine now you have a compound name "aspirin", you want to know the exact chembl ID
+
 
 try the following commamds
 <p>$touch aspirin.txt<p/>
 <p>$echo asporin > aspirin.txt<p/>
 <p>$chembl_ids -i aspirin.txt -o aspirin_id</p>
 
-<p>after finish, if you use "vi aspirin_id", you will see the chembl ID is CHEMBL25. In this simple case, the speed of using the web_client and the web browser seems not improved much, but imagin when you got a thousand molecule names, it is obviously will be easier with this web_client, what you need to do is putting all the names into a singel .txt, and you will get another .txt listed all the cheml IDs.</p>
+<p>after the finish, if you use "vi aspirin_id", you will see the chembl ID is CHEMBL25. In this simple case, the speed of using the web_client and the web browser seems not improved much, but imagine when you got a thousand molecule names, it is obviously will be easier with this web_client, what you need to do is putting all the names into a single .txt, and you will get another .txt listed all the cheml IDs.</p>
 
 <p>Let's try how to find protein target for a certain compound, still use aspirin as an example, go to command line, type:</p>
 <p>$ chembl_m2t -i id.txt -o 25 -s chembl_id -H </p>
 
 <p>id.txt contains the aspirin id as CHEMBL25, 25 is  a random name I give the output, you can give any name. -H means
 only human being related targets are of interested here.
+
 
 after press "ENTER" it will take several minites to give out the output named as 25, again, the name here is just name, you can name it aspirin_target if you wish.<p/>
 
