@@ -1,0 +1,42 @@
+This is a PyMOL script written by Quantao, for 
+protein-ligand interaction display purpose, you can use it 
+for free, but you DO NEED TO CHANGE THE RESIDUE NUMBERS, LABLE NAMES, AS WELL AS FILE SAVING NAMES.
+
+set_name Title_32,lig1##change to your own name!
+select res,resi 19+24+21+32+17+20## change to your ligand sites residue numbers!
+hide
+show sticks, lig1|res
+hide sticks, h.
+zoom lig1|res
+color yellow, lig1&name C*
+set label_size, 28 # you have the freedom to change here to another number.
+set label_font_id, 8# you have freedom to change here to another number.
+##label the residules
+##measure the distance
+##show or hide the Lys/Leu hydrogens
+##The next secotion is to display HYDOPHOBIC interacton.
+pesudo atoms.
+select residue 19+24+21+32+17+20 ##Change to your own site numbers!
+show lines, sele
+pseudoatom pi_cent,sele
+show sphere, sele
+set sphere_scale, 0.25
+set sphere_color, cyan
+
+set dash_length , 0.3
+set dash_radius , 0.08
+set dash_gap , 0.3
+bg_color white
+set label_color, black
+show cartoon
+set cartoon_transparency, 0.3# Change the value as your wish.
+setting>cartoon>fancyhelxis
+##change mouse mode to editing, and then hold control and move around labels
+ray # right click
+##Change the working directory
+png focus32.png, dpi=300 ## change to your own name for the .png, change the resolution as your wish.
+save focus32.pse## change to your name for saving the PyMOL job for later usage.
+
+##############good luck###################
+
+
