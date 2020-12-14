@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Quantao's Blog - Medicinal Chemistry Topics</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+  <!-- Custom styles for this template -->
+  <link href="css/clean-blog.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Never Stand Still</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About Me</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Blogs</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact Me</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url('img/post-bg.jpg')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+            <h1> High Quality Image with PyMOL </h1>
+            <h2 class="subheading">The basics about making PyMOL images introduced, with a coronavious related protein.</h2>
+            <span class="meta">Posted by
+              <a href="#">Quantao</a>
+              on December 14, 2020</span>
+              
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Post Content -->
+  <article>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <p> PyMOL has the <a href="https://pymol.org/edu/?q=educational/">academic registration option</a>, please notice, this is only for education or self-study purpose, any academic publication purpose is not allowed, even it is non-profit. If you are a Schrodinger client, you get PyMOL access as well.
+
+    
+            
+            <p> The bar highlighted in red is the most important thing you want to know, all the commands are inputted here, by saying “commands” I mean a mix of basic “ bash” and unique PyMOL specific commands. </p>
+            <p> <a href="#">
+            <img class="img-fluid" src="img/post10/post10.1.png" alt="">
+            </a></p>
+            
+            
+            <P>Don’t worry, the TAB button is always your friend, if you type “re” and then the tab will list all the commands begins with re, like “remove” or “reinitialize”. <p/>
+            
+            <p><a href="#">
+            <img class="img-fluid" src="img/post10/post10.2.png" alt="">
+            </a>
+            </p>
+            <p>Let’s use the Crystal structure of the wild type SARS-CoV-2 papain-like protease (PLPro) with inhibitor GRL0617 as an example,<p/>
+              
+                
+                But here we just go to the "File" > "Get PDB" and a new window prompt asking you input the PDB ID, fill 7JRN, then click "Download".
+                Alternatively you can type "fetch 7JRN" into the command line box, press Enter. Or, you can download the structure from  <a href="https://www.rcsb.org/structure/7JRN/">7JRN </a> to your local computer then drag it into the PyMOL window.
+                  <h2> Get familiar with the command line.</h2>
+                
+<p> The good thing is every time you click somewhere on the toolbar like you click the “File” > “Change Work directory”  > to "Your-directory" named "coronavirus", the command "cd C:\Users\Your-derectory\coronavious\" refresh in time with your action, so next time if you just type the corresponding command instead of clicking, PyMOL will do the same action, it is a good learning process for those who are not familiar with PyMOL commands</p>
+                
+<a href="#">
+            <img class="img-fluid" src="img/post10/post10.3.png" alt="">
+            </a>
+Lets type "fetch 7jrn" command, press enter, the protein shows up but as a dimer with two repeated units. Running with a dimer will slow down the speed of later image making process, and it is meaning less to do so, since they are almost the same to each other.
+
+           <p><a href="#">
+            <img class="img-fluid" src="img/post10/post10.4.png" alt="">
+            </a></p>
+           <p>
+            There are two chains as above, to obtain a single chain, we just type "remove chain A" or "remove chain B", and press enter. You should now only have one chain left. Alternatively, you could type the following from the very beginning:</p>
+            <p>
+            set assembly, 1<p/>
+            <p>fetch 3bhv, assembly 1, async=0</p>
+            By doing this, you also get a single chain.
+                <p><a href="#">
+            <img class="img-fluid" src="img/post10/post10.6.png" alt="">
+            </a></p>
+             
+            
+           <p>It looks not very nice by now, next we will put the commands one by one to make it better and better. First is a cheat script applies to all proteins, the following commands are originally from from <a href="https://bionerdnotes.wordpress.com/2018/11/12/getting-high-quality-pictures-in-pymol/">Getting High Quality Pictures in PyMOL </a> with slight modification</p>  
+                <p>set bg_rgb=[1,1,1]</p>
+                <p>space cmyk</p>
+                <p>set orthoscopic, on</p>
+             
+               <p>  set ray_trace_fog=0</p>
+               <p>set depth_cue=0</p>
+                <p>util.performance(0)</p>
+                 <p>util.performance(0)</p>
+               <p>set cartoon_highlight_color, grey75</p> 
+                <p>   set antialias, 4</p>
+             
+                <p>set hash_max, 300</p>
+               <p> set internal_gui=0 </p>
+               <p>set ray_trace_mode, 1</p>
+                <p>set ray_trace_gain, 0.005</p>
+               <p> set ray_trace_color, magenta</p>
+                <p>set ray_shadows,1 </p>
+                <p>ray 2400, 2400# or 1024, 768</p>
+                <p>png ~/Desktop/coronavirous.png, width=10cm, dpi=1000, ray=1</p>
+                <p> (You can copy all the above lines, paste them in a txt file, and save the file as *.py, then go "file" > "run script" > choose the *py, click run, so all the commands run at one time)</p>
+
+           <p>
+            <a href="#">
+            <img class="img-fluid" src="img/post10/post10.8.png" alt="">
+            </a></p>
+            <p> Now it looks better, but if you only interest in the ligand binding to this protein, this image don't tell you much. Next let's do something to highlight the ligand</p>
+                
+      <p> type "set seq_view,1" press enter, the amino acids sequence with all the co-factors appears on the top of the image. If you click on the ligand in red box, the ligand name in the sequence will be highlighted, vice versa.</p>
+                <p>
+            <a href="#">
+            <img class="img-fluid" src="img/post10/post10.9.png" alt="">
+            </a></p>
+        <p> Select all the co-factors in the sequence but the ligand TTT with shift, and type "remove sele" , press enter, only protein and ligand left.</p>
+        <h2>Get familiar with the clicking.</h2>
+                <p>1. click the color button for All, select "cyan"</p>
+                <p>2. select the ligand, click color button for" blue" </p>
+                <p>
+            <a href="#">
+            <img class="img-fluid" src="img/post10/post10.11.png" alt="">
+            </a></p>
+                <p>3. click "S" > show "surface" for assembly_1</p>
+               <p> <a href="#">
+            <img class="img-fluid" src="img/post10/post10.12.png" alt="">
+            </a></p>
+                
+                <p>4. Click "Display" > "quality" > reseanable quality</p>
+                 <p>5. "Setting" > Transparency > surface > 50%</p>
+                <p>6. Click the A for assembly_1, then click "present" > lignad site> cartoon</p>
+               <p> <a href="#">
+            <img class="img-fluid" src="img/post10/post10.13.png" alt="">
+            </a></p>
+                <p> <a href="#">
+            <img class="img-fluid" src="img/post10/post10.14.png" alt="">
+            </a></p>
+                <p> If we rotate a bit, there are two H-bonds formed between TTT and the coronavirous here as shown in dashed lines.</p>
+                <p> <a href="#">
+            <img class="img-fluid" src="img/post10/post10.15.png" alt="">
+            </a></p>
+                <p>6. Click the upright "Draw/Ray" > "Ray", and wait until the imagge show up</p>
+                     <p> Save image file to your folder</p>
+                <h2> It's not over! </h2>
+                You properly noticed, the above image is still not perfect, but due to the limitation of this blog, I don't want to go futher to overwhelm people, but starting from the last image, there are a lot new commands we could applied, especially put more emaphsis on the interacction between the small molecule and protein. An example txt file will be attached here, which could be used in your own project, BUT YOU NEED TO CHANGE IT BASED ON YOUE OWN PROTEIN.
+                
+      </div>
+    </div>
+  </article>
+
+  <hr>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <ul class="list-inline text-center">
+            <li class="list-inline-item">
+              <a href="#">
+                <span class="fa-stack fa-lg">
+                 
+                </span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#">
+                <span class="fa-stack fa-lg">
+             
+                </span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#">
+                <span class="fa-stack fa-lg">
+                
+                </span>
+              </a>
+            </li>
+          </ul>
+          <p class="copyright text-muted">Copyright &copy; https://quantaosun.github.io 2020</p>
+        </div>
+      </div>
+    </div>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="js/clean-blog.min.js"></script>
+
+</body>
+
+</html>
