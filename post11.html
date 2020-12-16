@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Quantao's Blog - Medicinal Chemistry Topics</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+  <!-- Custom styles for this template -->
+  <link href="css/clean-blog.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Never Stand Still</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About Me</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Blogs</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact Me</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url('img/post-bg.jpg')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+            <h1> Gromacs installation, running and result analysis </h1>
+            <h2 class="subheading">Gromacs remindes you: “ In the End, Science Comes Down to Praying”</h2>
+            <span class="meta">Posted by
+              <a href="#">Quantao</a>
+              on December 17, 2020</span>
+              
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Post Content -->
+  <article>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <a href="http://www.gromacs.org/"> Gromacs </a>   is a free package designed for biology or chemistry simulation. It is easy for beginners compared to other simulation packages. For best performance, you may want to install it on a cluster, but here I just want to show what a local laptop can do， so the method here may differ from that of cluster installation.
+             <p> <a href="#">
+            <img class="img-fluid" src="img/post11/post11.0.png" alt="">
+            </a></p>
+            Image from <a href="https://www.google.com.au/search?q=gromacs+logo&sxsrf=ALeKk03W00wqS4I2b1ix4jzXra8PAJ5aQg:1608174534527&tbm=isch&source=iu&ictx=1&fir=O_kGw8iWrMxYYM%252CDudpJEL7ZdRB7M%252C_&vet=1&usg=AI4_-kSdsXOgiz5qehHReqee6AjA7350wg&sa=X&ved=2ahUKEwik3ff-hNTtAhV9wjgGHfjLBKwQ9QF6BAgPEAE&biw=1386&bih=914#imgrc=O_kGw8iWrMxYYM /">  here </a>
+            
+            <h2> Step A. Download and install Gromacs.</h2>
+            
+            
+            <p> If you are a chemistry or biology guy, you probably not a fan of coding, there are quick installation lines for you. The installation need “cmake”, I recommend you just go ahead with the following lines, if you are required to install CMake, then just install it, if nothing wrong means your system already contains CMake, you don’t need to worry about it then.<p/>
+
+
+            
+            <P>The quick installation need you to put the lines below in your terminal, after you have downloaded the Gromacs 2020.targz, from <a href="http://www.gromacs.org/"> Gromacs offical downloading site </a> This is a "dirty" installation so there is no speed optimisation based on your computer, sadly as its offical documentation mentioned, if you do want to make a "perfect" installation to make full use of your computer, you have to read a lot more techinical stuff, for which I try to avoid here <p/>
+            <p>
+                There are 9 commonds in total which I have give each of them a number, I will use these nummber in the installation process</p>
+            <p><a href="#">
+            <img class="img-fluid" src="img/post10/post11/post11.install.png" alt="">
+            </a>
+            </p>
+            <p>command "1" is just try to unzip to extract the file to a folder called "gromacs-2020"
+            Comand "2" is entering the newly extracted folder, and "3" mean to creat a "build" folder inside "gromacs-2020". "4" let you enter to build, and prepare to run "5", the output of "5" will be stored in "build"<p/>
+                <p> <h3> Input command "5", wait until finish</h3><p/>              
+                
+<p>There might be a warning saying things about GPU, just ignore it and move on </p>  
+                 <p> <h3> Input command "6", after finish, it looks like below</h3><p/>
+<p>Command "6" may take a while before finish, after finish, it looks like</p>
+              
+                
+ <p><a href="#">
+            <img class="img-fluid" src="img/post11/post11.3.png" alt="">
+            </a>
+            </p>
+<p> <h3>Input comand "7", after finish, it looks like below</h3><p/>
+
+           <p style="text-align:center;"><a href="#">
+            <img class="img-fluid" src="img/post11/post11.4.png" alt="">
+            </a></p>
+           <p> <h3>Input comand "8", after finish, it looks like below</h3><p/>
+           
+              <p style="text-align:center;"><a href="#">
+            <img class="img-fluid" src="img/post11/post11.5.png" alt="">
+            </a></p>
+            
+            <p> <h3>Input comand "9", hit enter button</h3><p/>
+              <p> <h3>last, Open the ~/.bashrc</h3><p/>   
+                  <p style="text-align:center;"><a href="#">
+            <img class="img-fluid" src="img/post11/post11.6.png" alt="">
+            </a></p>
+                <p>Add either "source /usr/locall/gromacs/bin/GMXC"</p>
+              <p> or         "export PATH=/usr/locall/gromacs/bin:$PATH"  </p>
+                to the last line of your ~/.bashrc file.
+                
+              <p>Try “gmx -h”, press enter, if you can find a lovely "Gromacs reminds you:" like in the green box, congratulations, you already get Gromacs installed on your laptop </p>
+
+           <p style="text-align:center;">
+            
+               <a href="#">
+            <img class="img-fluid" src="img/post11/post11.7.png" alt="" >
+            </a></p>
+            <p> <h2>Step B. Head to <a href="http://www.mdtutorials.com/gmx/lysozyme/index.html">This Tutorial  </a>  ,do the simulation.</h2> <p/> 
+                
+    
+                <p style="text-align:center;">
+            <a href="#">
+            <img class="img-fluid" src="img/post11/post11.8.png" alt="">
+            </a></p>
+        <p>This a very nice and concise  <a href="http://www.mdtutorials.com/gmx/lysozyme/index.html">tutorial</a> you can follow step by step, so I will not go to the details too much. After you download the protein from PDB bank, you can almost copy the command lines from the "Lysozyme in water" tutorial, and hit enter to run your simulation.</p>
+            <p> <span style="background-color: #FFFF00">But just be aware all the *.mdp files need YOU to creat them,.</span>
+                
+                you should pay attention to <span style="background-color: #FFFF00">the RED content like "here" or "this"</span>  when you go throung the "Lysozyme in water" tutorial, copy the content from the RED links, and pate to your *.mdp file <p/>
+       
+               <p> <h2>Step C. Head to <a href="https://bioinformaticsreview.com/20200609/md-simulation-output-analysis-of-protein-using-gromacs/"> Output analysis</a>  ,do more analysis.</h2> <p/> 
+                <p> In the "Lysozyme in Water" tutorial, you probably already did several analysis, but it may not enough, so I recommend you to use this site to do more analysis like RMSF and H bond networks analysis. </p>
+                <p> Please beaware, you can choose other analysis means, but for the sake of this blog, it is good to use the <a href="https://bioinformaticsreview.com/20200609/md-simulation-output-analysis-of-protein-using-gromacs/"> article </a> was put here, it is consistend with the "Lysozyme in water" tutorial, so you can just copy the command line from this site to pate directly to your terminal and run it, just like what you have done in Step B</p>
+                <p style="text-align:center;">
+            <a href="#">
+            <img class="img-fluid" src="img/post11/post11.9.png" alt="">
+            </a></p>
+               
+              <p> A total of 8 plots were obtained including the RMSD plot, by which we can tell the protein in water kind of reached equilibrium, with little fluctuations. RMSD plot usually tells you if your simulation is good or not, also, some more complex plot like the hydrogen bonding networks between "non-protein" and protein were created as well, in this case, there is no small ligand but a pure protein, so the "non-protein" means the environment like waters and ions</p>
+                <p>By finishing this, you can get a sense of what Gromacs can do, of course, there is a lot more Gromacs can do, like predicting the protein folding process by a very long time simulation which can only be done by a cluster or supercomputer.</p>
+                <h2> Further Reading </h2>
+                <p> As we mentioned, this blog uses a pure protein without ligand for the sake of saving simulation time and make things easier for learning purposes. More than often, we are interested in a protein-ligand complex, in that case, after finishing the simulation, if we plot out the H-bonding networks between the ligand and protein, the information will be valuable to judge if a certain H-bond is strong or weak, which can help drug-like molecule design.<p/>
+                <p> What's more, there are some excellent implementations you could use like the MMGBSA analysis, which can help to determine how much a certain pocket amino acid contribute to the ligand bind, which may be helpful when you try to design  stronger or weaker binders<p/>
