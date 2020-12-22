@@ -133,7 +133,7 @@ traffic lights turned green, indicating all job finished successfully.<p/>
 <p>Next, I will show you how to use Knime to explore Kinase information, The database called <a href=" http://klifs.vu-compmedchem.nl/">   KLIFs </a> 
     
   is a database containing all the kinase and related ligand information. We split this example into two parts, part 1 is install the KLIFs node, part2 shows how to run the workflow to view the protein-ligand interaction, interaction fingerprint analysis of human MAPK-ligand complexes.<p/>
-            <p> <h3>part 1.</h3><p/>
+            <p> <h3>part1.</h3><p/>
                <p>To enable Knime can interact with your software or database of interest, you need to install the software first on your computer,  then in Knime, you need to install the corresponding “node” for that software. In our case, what I want Knime to do is to interact with a free database online, so I only need to install the “node” which is called “KLIFs-Knime-node” which is fine.<p/>
 
 <p>The node is fetched from So, you need to go to “Help” > “install new software > “add”, then paste "https://3d-e-chem.github.io/updates " to the Archive, click “OK” to search the 
@@ -157,7 +157,7 @@ Node,  after some nodes are listed, select the “KLIFS KNIME nodes” and insta
                <p stye="text-align:center;"> <a href="#">
             <img class="img-fluid" src="img/post12/post12.8.png" alt="">
             </a></p>
-                
+            <p> <h3>part2.</h3><p/>    
               <p>What you need to is to select a kinase family of your interest, let’s say you are interested in the MAPK family, you just right-click the “Row Filter” node to configure the node, by selecting MAPK. If you just want to feel the fun of Knime, you could just leave it as its default, and press shift+f7 to execute all the workflow.<p/>
               
                <p style="text-align:center;"> <a href="#">
@@ -181,6 +181,8 @@ Node,  after some nodes are listed, select the “KLIFS KNIME nodes” and insta
                <p stye="text-align:center;"> <a href="#">
             <img class="img-fluid" src="img/post12/post12.13.png" alt="">
             </a></p>
+            
+           <h2>The end</h2>  
             <p>To be summarized, Knime is capable to interact with many software and databases. The above examples are kind of hard to understand for people who are not familiar with a certain research area. All I want to say is the community of Knime is huge and active, there are always new nodes and new workflow contributing to the <a href="  https://hub.knime.com"> KnimeHub. </a>You can create your workflow and upload it to Knime Hub to be a contributor as well, especially in the area you are good at, Like the IT area or even language analysis! <p/>
 
 <P>Since knime works in a form of a workflow, which means once you need to update your first node, and you can just run the workflow to the final node, with one click. It is extremely convenient when calculations need to be validated.<P/>
