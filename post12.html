@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Quantao's Blog - Medicinal Chemistry Topics</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+  <!-- Custom styles for this template -->
+  <link href="css/clean-blog.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Never Stand Still</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About Me</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Blogs</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact Me</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url('img/post-bg.jpg')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+            <h1> Two examples demonstrated with Knime </h1>
+            <h2 class="subheading">Knime is an open-source platform that can integrated with many third-party software, website and databases.</h2>
+            <span class="meta">Posted by
+              <a href="#">Quantao</a>
+              on December 22, 2020</span>
+              
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Post Content -->
+  <article>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+         
+            
+            <p><a href="  https://www.knime.com/"> KNIME </a> is a very cool idea that it allows all people from different backgrounds to improve their work efficiency greatly.<p/>
+
+<p>Knime is free software, it can be integrated with many software, websites, and databases to help you work smarter. But if the third-party resources need a license, then you do need a license to let Knime run them in the background as well.<p/>
+
+<p>The first example we are going to talk about is EXCEL.<p/>
+
+<p>The good thing about Knime is all the calculation is happening behind the scene, you will not see anything happening but some “Traffic Lights” changing from yellow to green if everything is right, and a red one if there is an error, this helps you focus more on the problem itself.<p/>
+            
+            <p><h2>Example 1</h2><p/>
+<p>The next example is about making an image for sales statistical data.<p/>
+
+
+            <p> <a href="#">
+            <img class="img-fluid" src="img/post12/post12.0.png" alt="">
+            </a></p>
+            
+            <p>The table below is what Knime needs to deal with, a staked are chart, and a pie chart need to be made.<p/>
+           
+            
+            <p><a href="#">
+            <img class="img-fluid" src="img/post12/post12.1.png" alt="">
+            </a>
+            </p>
+          <p>This table is stored in the workspace of the Knime workspace you have defined when you launch Knime.<p/>
+                
+<a href="#">
+            <img class="img-fluid" src="img/post12/post12.3.png" alt="">
+            </a>
+<p>Now, if you just press “Shift+F7”, the Knime workflow will be executed. This is a really easy job for Knime, so the job will be done almost immediately. All the
+traffic lights turned green, indicating all job finished successfully.<p/>
+
+
+           <p style="text-align:center;"><a href="#">
+            <img class="img-fluid" src="img/post12/post12.4.png" alt="">
+            </a></p>
+           <p>After finish, you just need to right-click the last node to view the image like below.<p/>
+           
+                <p style="text-align:center;"><a href="#">
+            <img class="img-fluid" src="img/post12/post12.5.png" alt="">
+            </a></p>
+             
+            
+           
+               
+           <p style="text-align:center;">
+            
+               <a href="#">
+            <img class="img-fluid" src="img/post12/post12.6.png" alt="" >
+            </a></p>
+          
+          <p><h2>Example 2.</h2> <p/>
+<p>(In case you decide to use this workflow in your research project, just remember to cite the paper about this workflow.)<p/>
+<p>Next, I will show you how to use Knime to explore Kinase information, The database called <a href=" http://klifs.vu-compmedchem.nl/">   KLIFs </a> 
+    
+  is a database containing all the kinase and related ligand information. We split this example into two parts, part 1 is install the KLIFs node, part2 shows how to run the workflow to view the protein-ligand interaction, interaction fingerprint analysis of human MAPK-ligand complexes.<p/>
+            <p> <h3>part 1.</h3><p/>
+               <p>To enable Knime can interact with your software or database of interest, you need to install the software first on your computer,  then in Knime, you need to install the corresponding “node” for that software. In our case, what I want Knime to do is to interact with a free database online, so I only need to install the “node” which is called “KLIFs-Knime-node” which is fine.<p/>
+
+<p>The node is fetched from So, you need to go to “Help” > “install new software > “add”, then paste "https://3d-e-chem.github.io/updates " to the Archive, click “OK” to search the 
+Node,  after some nodes are listed, select the “KLIFS KNIME nodes” and installed, then restart KNIME. </p>
+
+
+           
+                <p style="text-align:center;">
+            <a href="#">
+            <img class="img-fluid" src="img/post12/post12.7.png" alt="">
+            </a></p>
+        
+
+                
+                <p style="text-align:center;">
+            <a href="#">
+            <img class="img-fluid" src="img/post12/post12.m.png" alt="">
+            </a></p>
+             <p>The workflow can be downloaded from  <a href=" https://github.com/3D-e-Chem/workflows/blob/master/jcim/KLIFS_example_workflow_full.knwf"> the workflow link </a>   <p/>
+            
+               <p stye="text-align:center;"> <a href="#">
+            <img class="img-fluid" src="img/post12/post12.8.png" alt="">
+            </a></p>
+                
+              <p>What you need to is to select a kinase family of your interest, let’s say you are interested in the MAPK family, you just right-click the “Row Filter” node to configure the node, by selecting MAPK. If you just want to feel the fun of Knime, you could just leave it as its default, and press shift+f7 to execute all the workflow.<p/>
+              
+               <p style="text-align:center;"> <a href="#">
+            <img class="img-fluid" src="img/post12/post12.9.png" alt="">
+            </a></p>
+               
+            <p>If you are interested in, e.g. the kinase group of CMGC, then, you need to modify the "Row Filter" to select as the next image<p/>
+       
+                <p> <a href="#">
+            <img class="img-fluid" src="img/post12/post12.10.png" alt="">
+            </a></p>
+            
+            <p>If you right-click the view button after finish there will be something like below, what you get is a group of similar kinases with their bound ligand structure and the pocket amino acid sequence, based on your screening conditions specified above<p/>
+             
+                   <p> <a href="#">
+            <img class="img-fluid" src="img/post12/post12.11.png" alt="">
+            </a></p>
+                
+            <p>After all the job is done, if you click the “structures Retrievers” node, you will see a representative binding pattern for the ligand and the Hinge area of the kinase, based on your defined family.<p/>
+            
+               <p stye="text-align:center;"> <a href="#">
+            <img class="img-fluid" src="img/post12/post12.13.png" alt="">
+            </a></p>
+            <p>To be summarized, Knime is capable to interact with many software and databases. The above examples are kind of hard to understand for people who are not familiar with a certain research area. All I want to say is the community of Knime is huge and active, there are always new nodes and new workflow contributing to the <a href="  https://hub.knime.com"> KnimeHub. </a>You can create your workflow and upload it to Knime Hub to be a contributor as well, especially in the area you are good at, Like the IT area or even language analysis! <p/>
+
+<P>Since knime works in a form of a workflow, which means once you need to update your first node, and you can just run the workflow to the final node, with one click. It is extremely convenient when calculations need to be validated.<P/>
+
+                
+                
+      </div>
+    </div>
+  </article>
+
+  <hr>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <ul class="list-inline text-center">
+            <li class="list-inline-item">
+              <a href="#">
+                <span class="fa-stack fa-lg">
+                 
+                </span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#">
+                <span class="fa-stack fa-lg">
+             
+                </span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#">
+                <span class="fa-stack fa-lg">
+                
+                </span>
+              </a>
+            </li>
+          </ul>
+          <p class="copyright text-muted">Copyright &copy; https://quantaosun.github.io 2020</p>
+        </div>
+      </div>
+    </div>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="js/clean-blog.min.js"></script>
+
+</body>
+
+</html>
