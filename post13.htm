@@ -15,10 +15,10 @@ xmlns="http://www.w3.org/TR/REC-html40">
   <o:Author>Sun Terry</o:Author>
   <o:Template>Normal</o:Template>
   <o:LastAuthor>Sun Terry</o:LastAuthor>
-  <o:Revision>5</o:Revision>
-  <o:TotalTime>53</o:TotalTime>
-  <o:Created>2020-12-25T02:43:00Z</o:Created>
-  <o:LastSaved>2020-12-25T03:17:00Z</o:LastSaved>
+  <o:Revision>2</o:Revision>
+  <o:TotalTime>56</o:TotalTime>
+  <o:Created>2020-12-25T04:03:00Z</o:Created>
+  <o:LastSaved>2020-12-25T04:03:00Z</o:LastSaved>
   <o:Pages>1</o:Pages>
   <o:Words>324</o:Words>
   <o:Characters>1849</o:Characters>
@@ -36,8 +36,6 @@ xmlns="http://www.w3.org/TR/REC-html40">
 <!--[if gte mso 9]><xml>
  <w:WordDocument>
   <w:Zoom>110</w:Zoom>
-  <w:HideSpellingErrors/>
-  <w:HideGrammaticalErrors/>
   <w:SpellingState>Clean</w:SpellingState>
   <w:GrammarState>Clean</w:GrammarState>
   <w:TrackMoves>false</w:TrackMoves>
@@ -74,7 +72,7 @@ xmlns="http://www.w3.org/TR/REC-html40">
   </w:Compatibility>
   <w:DocumentVariables>
    <w:__Grammarly_42____i>H4sIAAAAAAAEAKtWckksSQxILCpxzi/NK1GyMqwFAAEhoTITAAAA</w:__Grammarly_42____i>
-   <w:__Grammarly_42___1>H4sIAAAAAAAEAKtWcslP9kxRslIyNDYyNTY2NjEzMzUzszQDMpR0lIJTi4sz8/NACoxqATGQ/EUsAAAA</w:__Grammarly_42___1>
+   <w:__Grammarly_42___1>H4sIAAAAAAAEAKtWcslP9kxRslIyNDYyNTY2NjEzMzUzszQDMpR0lIJTi4sz8/NACoxrAXCh51wsAAAA</w:__Grammarly_42___1>
   </w:DocumentVariables>
   <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
   <m:mathPr>
@@ -849,7 +847,7 @@ is a short tutorial of how to compile <span class=SpellE>Gromacs</span>, a-<span
 class=SpellE>i</span>, is the installation steps,<o:p></o:p></span></p>
 
 <p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:"Arial",sans-serif'>and
-1-5 is the method to get rid of an error of missing <span class=SpellE>cmake</span>.
+1-5 is the method to get rid of an error of missing <span class=SpellE>CMake</span>.
 If you don't get any error r<o:p></o:p></span></p>
 
 <p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:"Arial",sans-serif'>during
@@ -866,7 +864,7 @@ it has been noticed that version <span class=SpellE>Gromacs</span>/2019.3
 installation is problematic due to the<o:p></o:p></span></p>
 
 <p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:"Arial",sans-serif'>remote
-server of <span class=SpellE>gromacs</span> ftp service, so if you encounter
+server of <span class=SpellE>Gromacs</span> ftp service, so if you encounter
 some weird error like some necessary<o:p></o:p></span></p>
 
 <p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:"Arial",sans-serif'>files
@@ -902,8 +900,28 @@ your hardware and internet connection speed.<o:p></o:p></span></p>
 </span>cd build<o:p></o:p></span></b></p>
 
 <p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:"Arial",sans-serif;
-color:#00B050'>e. <span class=SpellE>cmake</span><span class=GramE> ..</span>
+color:#00B050'>e. <span class=SpellE>CMake</span><span class=GramE> ..</span>
 -DGMX_BUILD_OWN_FFTW=ON -DREGRESSIONTEST_DOWNLOAD=ON<o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:"Arial",sans-serif'>Now,
+a very nasty error, especially you just installed a ubuntu system, &quot;<span
+class=SpellE>CMake</span> is missing&quot;, the system will suggest you &quot;<span
+class=SpellE>sudo</span> apt install <span class=SpellE>CMake</span>&quot; <o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:"Arial",sans-serif'>The
+system suggestion is not wrong but just not enough to help you out of that
+problem.<o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:"Arial",sans-serif'>If
+you do like the suggestion, you may solve it, but for others, there might be
+another<o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:"Arial",sans-serif'>error
+remaining about C++ compiler path not defined, etc. <o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:"Arial",sans-serif'>So,
+I suggest you do like <span style='background:yellow;mso-highlight:yellow'>1-5</span>
+as per below, then you have a great chance to have no error.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:"Arial",sans-serif;
 color:#00B050'>f. <span class=GramE>make</span><o:p></o:p></span></p>
@@ -928,26 +946,6 @@ color:#00B050'>echo &quot;source /<span class=SpellE>usr</span>/local/<span
 class=SpellE>gromacs</span>/bin/GMXRC&quot; &gt;&gt; ~/.<span class=SpellE>bashrc</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:"Arial",sans-serif'><o:p>&nbsp;</o:p></span></p>
-
-<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:"Arial",sans-serif'>Now,
-a very nasty error, especially you just installed a ubuntu system, &quot;<span
-class=SpellE>cmake</span> is missing&quot;, the system will suggest you &quot;<span
-class=SpellE>sudo</span> apt install <span class=SpellE>cmake</span>&quot; <o:p></o:p></span></p>
-
-<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:"Arial",sans-serif'>The
-system suggestion is not wrong but just not enough to help you out of that
-problem.<o:p></o:p></span></p>
-
-<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:"Arial",sans-serif'>If
-you do like the suggestion, you may solve it, but for others, there might be
-another<o:p></o:p></span></p>
-
-<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:"Arial",sans-serif'>error
-remaining about C++ compiler path not defined, etc. <o:p></o:p></span></p>
-
-<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:"Arial",sans-serif'>So,
-I suggest you do like 1-5 as per below, then you have a great chance to have no
-error.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;font-family:"Arial",sans-serif;
 background:yellow;mso-highlight:yellow'>1. <span class=SpellE>sudo</span> apt
