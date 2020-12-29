@@ -31,9 +31,9 @@ Again, please be aware THIS IS SCIPT NUMBER 2，READ "SCRIPT NUMBER 1" FIRST.
 
   Commands                                                                          Environment
 
-1.fetch 6i5i(4ylj)  #please alias "fetch" as described in "script number 1" --------# 1.terminal
-2.vim 6i5i (4ylj)  #please check and write down the 3-letter name of the ligand     # 2.terminal
-3.pymol 6i5i.pdb(4ylj)                                                              # 3.terminal
+1.fetch $POTEIN  #please alias "fetch" as described in "script number 1" --------# 1.terminal
+2.vim $POTEIN  #please check and write down the 3-letter name of the ligand     # 2.terminal
+3.pymol $POTEIN.pdb                                                             # 3.terminal
 4.remove chain B, C, D  ----------------------------------------------------------- # 4.pymol
 5.remove solvent                                                                    # 5.pymol
 6.set seq_view,1                                                                    # 6.pymol
@@ -47,28 +47,28 @@ Again, please be aware THIS IS SCIPT NUMBER 2，READ "SCRIPT NUMBER 1" FIRST.
 #protein, save the ligand with the model protein together as the clean version of pdb to use
 #in step 9. If there is a far away modified amino acid, please change it back to the natural
 #version, and save it as the clean version to use in the next step.
-9.save as "6I5I_clear.pdb(4YLJ_clearn.pdb)"                                         # 9.pymol
-10.grep H3E 6I5I_clean.pdb > h3e.pdb("grep 4E1 4YLJ_clearn > 4e1.pdb")------------- #10.terminal
-grep -v H3E 6I5I_clean.pdb > 6I5I_clean2.pdb                                        #11.terminal
+9.save as "$POTEIN_clear.pdb(_clearn.pdb)"                                         # 9.pymol
+10.grep lIG  $POTEIN_clean.pdb > lig.pdb("grep lIG _clearn > lIG.pdb")------------- #10.terminal
+grep -v lIG $POTEIN_clean.pdb > $POTEIN_clean2.pdb                                        #11.terminal
 
 Mackerell lab webisite to -------------------------------------------------------   #website-1=
 #"MacKerell lab website"
 download charmm36-mar2019.ff.tgz                                                    #12.website-1
 tar -zxvf charmm36-mar2019 -------------------------------------------------------  #13.terminal
-gmx pdb2gmx -f 6I5I_clean2.pdb -o 6I5I_processed.gro -----------------------------  #14.gromacs
+gmx pdb2gmx -f $POTEIN_clean2.pdb -o $POTEIN_processed.gro -----------------------------  #14.gromacs
 "1"  "1" # Gromacs will ask you select an option twice, select 1 for both.          #15.gromacs
 
-obabel -ipdb h3e.pdb -omol2 h3e # the output is on screen, copy it. ----------------#16.terminal
-touch h3e.mol2                                                                      #17 terminal
-vim h3e.mol2, #use "i" to enter edit mode, paste obabel result.   ------------------#18.terminal
+obabel -ipdb lig.pdb -omol2 lig # the output is on screen, copy it. ----------------#16.terminal
+touch lig.mol2                                                                      #17 terminal
+vim lig.mol2, #use "i" to enter edit mode, paste obabel result.   ------------------#18.terminal
 
 download sort_mol2_bonds.pl ------------------------------------------------------- #19.website-2=
 #"www.mdtutorials.com/gmx/complex/02_topology.html
-perl sort_mol2_bonds.pl h3e.mol2 h3e_fix.mol2 # manage the bond orders -------------#20.terminal
+perl sort_mol2_bonds.pl lig.mol2 lig_fix.mol2 # manage the bond orders -------------#20.terminal
 # if you use a remote server and you don't have sudo permission to deal with potential
 #errors at this step, you could do it locally and copy the result up to the server.
 CGenFF offical site 
-upload h3e_fix.mol2, download "h3e_fix.str"---------------------------------------- #21.website-3=
+upload lig_fix.mol2, download "lig_fix.str"---------------------------------------- #21.website-3=
 #"https://cgenff.umaryland.edu"
 
 Mackerell lab website to --------------------------------------------------------- #   website-1
@@ -77,31 +77,31 @@ download cgenff_charmtogmx.py3_nx2.py ------------------------------------------
 #networkx2, it might be pyhton2 and networkx1. The website also provides two other
 # *py to download.  if you have a networkx3, you need to remove it first and 
 #install networkx2.3. 
-python3 cgenff_charmtogmx_py3_nx3.py H3E h3e_fix.mol2 "h3e_fix.str" charmm36-mar2019.ff #23.terminal
+python3 cgenff_charmtogmx_py3_nx3.py lig lig_fix.mol2 "lig_fix.str" charmm36-mar2019.ff #23.terminal
 
 #similar to step 20, if you use a remote server, but you are not allowed to install or
 #change the networkx version, please do it locally and copy the result to the server.
 
-gmx editconf -f h3e_ini.pdb -o h3e.gro ------------------------------------------------ -24.gromacs
+gmx editconf -f lig_ini.pdb -o lig.gro ------------------------------------------------ -24.gromacs
 
 touch complex.gro --------------------------------------------------------------------- -25.terminal
-cat 6I5I_processed.gro > complex.gro -------------------------------------------------- -26.terminal
-vim h3e.gro and copy all "H3E lines" -------------------------------------------------- -27.terminal
-vim complex.gro, insert "H3E lines" before last line box vector ----------------------- -28.terminal
+cat $POTEIN_processed.gro > complex.gro -------------------------------------------------- -26.terminal
+vim lig.gro and copy all "lig lines" -------------------------------------------------- -27.terminal
+vim complex.gro, insert "lig lines" before last line box vector ----------------------- -28.terminal
 vim complex.gro, change the atom numbers to an increased number. ----------------------- -29.terminal
 
 Insert "; Include ligand topology 
-        #include "h3e.itp" "  to topol.top 
+        #include "lig.itp" "  to topol.top 
 
         before ";Include water topology"  -------------------------------------------- -30.terminal
 
 Insert "; Include ligand parameters 
-        #include "h3e.prm" "  to topol.top 
+        #include "lig.prm" "  to topol.top 
 
         before "[moleculetype]"          --------------------------------------------- -31.terminal
 
 
-Insert "H3E         1"   to topol.top 
+Insert "lig         1"   to topol.top 
 
         before "[molecules]"          ------------------------------------------------ -32.terminal
 
@@ -122,12 +122,12 @@ gmx grompp -f em.mdp -c solv_ions.gro -p topol.top -o em.tpr -------------------
 
 gmx mdrun -v -deffnm em ----------------------------------------------------------- -40. gromacs
 
-gmx make_ndx -f h3e.gro -o index_h3e.ndx ------------------------------------------------    -41. gromacs
+gmx make_ndx -f lig.gro -o index_lig.ndx ------------------------------------------------    -41. gromacs
 
 # gromacs will give a list to let you choose. type as next:
  > 0 & ! a H* # choose all atoms but hydrogen.
  > q # save and quit.
-gmx genrestr -f h3e.gro -n index_h3e.ndx -o posre_h3e.itp -fc 1000 1000 1000 -------          -42. gromacs
+gmx genrestr -f lig.gro -n index_lig.ndx -o posre_lig.itp -fc 1000 1000 1000 -------          -42. gromacs
 
 Insert "; Ligand position restraints
          #ifdef POSRES
@@ -145,12 +145,12 @@ Insert "; Ligand position restraints
 gmx make_ndx -f em.gro -o index.ndx -------------------------------------------------------- -44. gromacs
 
 > 1 | 13
-> q    merge the "Protein" and "H3E" # This is purely for the need of later nvt.mdp
+> q    merge the "Protein" and "lig" # This is purely for the need of later nvt.mdp
 
 download nvt.mdp -------------------------------------------------------------------         -45.website-2
 
 vim nvt.mdp, find "tc-grps = Protein_JZ4 Water_and_ions " --------------------------         -46.terminal
-replace Protein_JZ4 with our "Protein_H3E" -----------------------------------------         -47.terminal
+replace Protein_JZ4 with our "Protein_lig" -----------------------------------------         -47.terminal
 
 gmx grompp -f nvt.mdp -c em.gro -r em.gro -p topol.top -n index.ndx -o nvt.tpr------         -48.gromacs
 
@@ -160,7 +160,7 @@ gmx mdrun -deffnm nvt              ---------------------------------------------
 download npt.mdp -------------------------------------------------------------------         -50.website-2
 
 vim npt.mdp, find "tc-grps = Protein_JZ4 Water_and_ions " --------------------------         -51.terminal
-replace Protein_JZ4 with our "Protein_H3E" -----------------------------------------         -52.terminal
+replace Protein_JZ4 with our "Protein_lig" -----------------------------------------         -52.terminal
 
 gmx grompp -f npt.mdp -c nvt.gro -t nvt.cpt -r nvt.gro -p topol.top -n index.ndx -o npt.tpr -53. gromacs
 
@@ -171,7 +171,7 @@ gmx mdrun -deffnm npt ----------------------------------------------------------
 download md.mdp -------------------------------------------------------------------         -55.website-2
 
 vim md.mdp, find "tc-grps = Protein_JZ4 Water_and_ions " --------------------------         -56.terminal
-replace Protein_JZ4 with our "Protein_H3E" -----------------------------------------        -57.terminal
+replace Protein_JZ4 with our "Protein_lig" -----------------------------------------        -57.terminal
 #for the last production, if you are using a remote gromacs, you could do as above in
 # a terminal, but since it will be a very long time, and your ssh window maybe 
 #disconnected when exceeding sometime, so I recommend you do as a batch job or use "X2GO"
