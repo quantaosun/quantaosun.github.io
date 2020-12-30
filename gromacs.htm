@@ -23,16 +23,16 @@ w\:* {behavior:url(#default#VML);}
   <o:Author>Sun Terry</o:Author>
   <o:Template>Normal</o:Template>
   <o:LastAuthor>Sun Terry</o:LastAuthor>
-  <o:Revision>53</o:Revision>
-  <o:TotalTime>232</o:TotalTime>
+  <o:Revision>58</o:Revision>
+  <o:TotalTime>238</o:TotalTime>
   <o:Created>2020-12-29T06:39:00Z</o:Created>
-  <o:LastSaved>2020-12-30T01:09:00Z</o:LastSaved>
+  <o:LastSaved>2020-12-30T01:20:00Z</o:LastSaved>
   <o:Pages>1</o:Pages>
-  <o:Words>2212</o:Words>
-  <o:Characters>12613</o:Characters>
+  <o:Words>2211</o:Words>
+  <o:Characters>12609</o:Characters>
   <o:Lines>105</o:Lines>
   <o:Paragraphs>29</o:Paragraphs>
-  <o:CharactersWithSpaces>14796</o:CharactersWithSpaces>
+  <o:CharactersWithSpaces>14791</o:CharactersWithSpaces>
   <o:Version>16.00</o:Version>
  </o:DocumentProperties>
  <o:OfficeDocumentSettings>
@@ -43,7 +43,6 @@ w\:* {behavior:url(#default#VML);}
 <link rel=colorSchemeMapping href="gromacs.files/colorschememapping.xml">
 <!--[if gte mso 9]><xml>
  <w:WordDocument>
-  <w:Zoom>110</w:Zoom>
   <w:HideSpellingErrors/>
   <w:HideGrammaticalErrors/>
   <w:SpellingState>Clean</w:SpellingState>
@@ -82,7 +81,7 @@ w\:* {behavior:url(#default#VML);}
   </w:Compatibility>
   <w:DocumentVariables>
    <w:__Grammarly_42____i>H4sIAAAAAAAEAKtWckksSQxILCpxzi/NK1GyMqwFAAEhoTITAAAA</w:__Grammarly_42____i>
-   <w:__Grammarly_42___1>H4sIAAAAAAAEAKtWcslP9kxRslIyNDYyNTY2NjEzMzUzszQDMpR0lIJTi4sz8/NACozMagFoiKC+LQAAAA==</w:__Grammarly_42___1>
+   <w:__Grammarly_42___1>H4sIAAAAAAAEAKtWcslP9kxRslIyNDYyNTY2NjEzMzUzszQDMpR0lIJTi4sz8/NACozMawEpubunLQAAAA==</w:__Grammarly_42___1>
   </w:DocumentVariables>
   <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
   <m:mathPr>
@@ -1124,38 +1123,32 @@ word-wrap:break-word;text-justify-trim:punctuation'>
 
 <div class=WordSection1 style='layout-grid:15.6pt'>
 
-<h2 align=left style='text-align:left'><span lang=EN-US>Tutorial of
+<h2 align=center style='text-align:center'><span lang=EN-US>Tutorial of
 protein-ligand complex simulation in water with <span class=SpellE>Gromacs</span>.</span></h2>
 
-<p class=MsoNormal style='text-indent:162.75pt;mso-char-indent-count:15.5'><span
+<p class=MsoNormal style='text-indent:241.5pt;mso-char-indent-count:23.0'><span
 lang=EN-US>By <span class=SpellE>Quantao</span>, posted on 29, December 2020.</span></p>
 
 <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
 
 <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US>#This is
-a <a href="https://pan.baidu.com/s/157ufQquKq1dSHgR6lA3sAA">command-line
-assembly(extraction code 9999) </a>for <span class=SpellE>Gromacs</span> solution
-simulation of a protein-ligand complex.</span></p>
-
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US>This
-tutorial is based on the tutorial of <a
-href="http://www.mdtutorials.com/gmx/complex/index.html">Justin A. Lemkul </a>,
-but with modification, with the mind to expand the utility of this tutorial.</span></p>
-
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US>(You
-could download the same tutorial from the above link to read in Sublime for a
-better reading experience. If you don't have Sublime yet,</span></p>
-
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US>You can
-use <i>snap install sublime-text</i> to install).</span></p>
+a <a href="https://pan.baidu.com/s/157ufQquKq1dSHgR6lA3sAA">command-line assembly(extraction
+code 9999) </a>for <span class=SpellE>Gromacs</span> solution simulation of a
+protein-ligand complex. This tutorial is based on the tutorial of <a
+href="http://www.mdtutorials.com/gmx/complex/index.html">Justin A. Lemkul</a>,
+but with modification, with the mind to expand the utility of this <span
+class=SpellE>tutorial.b</span> (You could download the same tutorial from the
+above link to read in Sublime for a better reading experience. If you don't
+have Sublime yet, you can use <i>snap install sublime-text</i> to install).</span></p>
 
 <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
 
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US>Four differences
-between this tutorial and Justin A. <span class=SpellE>Lemkul's</span> tutorial.</span></p>
+<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US>Four
+differences between this tutorial and Justin A. <span class=SpellE>Lemkul's</span>
+tutorial.</span></p>
 
 <p class=MsoListParagraph align=left style='margin-left:18.0pt;text-align:left;
-text-indent:-18.0pt;mso-char-indent-count:0;mso-list:l0 level1 lfo3'><![if !supportLists]><span
+text-indent:-18.0pt;mso-char-indent-count:0;mso-list:l0 level1 lfo2'><![if !supportLists]><span
 lang=EN-US style='mso-fareast-font-family:等线;mso-fareast-theme-font:minor-latin;
 mso-bidi-font-family:等线;mso-bidi-theme-font:minor-latin'><span
 style='mso-list:Ignore'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
@@ -1164,16 +1157,16 @@ with a nice structure, while this tutorial tries to show how to process a
 structure with a broken backbone or modified residue.</span></p>
 
 <p class=MsoListParagraph align=left style='margin-left:18.0pt;text-align:left;
-text-indent:-18.0pt;mso-char-indent-count:0;mso-list:l0 level1 lfo3'><![if !supportLists]><span
+text-indent:-18.0pt;mso-char-indent-count:0;mso-list:l0 level1 lfo2'><![if !supportLists]><span
 lang=EN-US style='mso-fareast-font-family:等线;mso-fareast-theme-font:minor-latin;
 mso-bidi-font-family:等线;mso-bidi-theme-font:minor-latin'><span
 style='mso-list:Ignore'>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span lang=EN-US>Justin shows primarily how to
-do work in a local machine, while this tutorial tries to expand the logic suitable
-for both local and remote.</span></p>
+do work in a local machine, while this tutorial tries to expand the logic
+suitable for both local and remote.</span></p>
 
 <p class=MsoListParagraph align=left style='margin-left:18.0pt;text-align:left;
-text-indent:-18.0pt;mso-char-indent-count:0;mso-list:l0 level1 lfo3'><![if !supportLists]><span
+text-indent:-18.0pt;mso-char-indent-count:0;mso-list:l0 level1 lfo2'><![if !supportLists]><span
 lang=EN-US style='mso-fareast-font-family:等线;mso-fareast-theme-font:minor-latin;
 mso-bidi-font-family:等线;mso-bidi-theme-font:minor-latin'><span
 style='mso-list:Ignore'>3.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
@@ -1182,12 +1175,12 @@ we use open babel to prepare small molecules for topology generation, which is
 easier to install and faster to process.</span></p>
 
 <p class=MsoListParagraph align=left style='margin-left:18.0pt;text-align:left;
-text-indent:-18.0pt;mso-char-indent-count:0;mso-list:l0 level1 lfo3'><![if !supportLists]><span
+text-indent:-18.0pt;mso-char-indent-count:0;mso-list:l0 level1 lfo2'><![if !supportLists]><span
 lang=EN-US style='mso-fareast-font-family:等线;mso-fareast-theme-font:minor-latin;
 mso-bidi-font-family:等线;mso-bidi-theme-font:minor-latin'><span
 style='mso-list:Ignore'>4.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span lang=EN-US>This tutorial does not focus on
-explaining the principles of molecular dynamic but emphasizes more on process
+explaining the principles of molecular dynamics but emphasizes more on process
 orders in a step-by-step manner.</span></p>
 
 <p class=MsoListParagraph align=left style='margin-left:18.0pt;text-align:left;
@@ -1195,177 +1188,175 @@ text-indent:0cm;mso-char-indent-count:0'><span lang=EN-US><o:p>&nbsp;</o:p></spa
 
 <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US>Note the
 following <b>$PROTEIN</b> and <b>$<span class=SpellE>lig</span></b>, or <b>$LIG</b>
-should be substituted by <b>your protein and ligand name</b> properly.</span></p>
+should be substituted by <b>your protein and ligand name</b> properly. Pay
+attention to the numbers before</span></p>
 
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US>Pay
-attention to the numbers before and after the command, which indicates the
-order and the command </span></p>
-
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US>environment.
-If there is a <span class=SpellE><b>pymol</b></span> at the end of the command,
-that means the command should be used <b>inside <span class=SpellE>pymol</span></b>,</span></p>
-
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US>if there
+<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US><span
+style='mso-spacerun:yes'>&nbsp;</span>and after the command, which indicates
+the order and the command environment. If there is a <span class=SpellE><b>pymol</b></span>
+at the end of the command, that means the command should be used <b>inside <span
+class=SpellE>pymol<span style='font-weight:normal'>,if</span></span></b> there
 is a <b>terminal</b> at the end, that means the command should be used inside a
-<b>bash terminal, </b>so if there is a</span></p>
-
-<p class=MsoNormal align=left style='text-align:left'><span class=SpellE><b><span
-lang=EN-US>gromacs</span></b></span><b><span lang=EN-US> </span></b><span
-lang=EN-US>that means you should load your <span class=SpellE>gromacs</span> module
-if you use a remote cluster. If there is a <b>website-1,</b></span></p>
-
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US>it means
-you need to head to the website-1 to download some files. This tutorial only
-applies to <span class=SpellE>Gromacs</span> with a version greater than 2018.</span></p>
+<b>bash terminal, </b>so if there is a <span class=SpellE><b>gromacs</b></span><b>
+</b>that means you should load your <span class=SpellE>gromacs</span> module if
+you use a remote cluster. If there is a <b>website-1,</b> it means you need to
+head to the website-1 to download some files. This tutorial only applies to <span
+class=SpellE>Gromacs</span> with a version greater than 2018.</span></p>
 
 <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
 
-<p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-US
+<p class=MsoNormal align=center style='text-align:center'><b><span lang=EN-US
 style='background:lightgrey;mso-highlight:lightgrey'>Commands </span></b><span
 lang=EN-US style='background:lightgrey;mso-highlight:lightgrey'><span
-style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
-style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><b><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><b><span
 style='mso-spacerun:yes'>&nbsp;&nbsp;</span>Environment</b><o:p></o:p></span></p>
 
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
 
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
 style='background:lightgrey;mso-highlight:lightgrey'>1.fetch $PROTEIN_ID<span
 style='mso-spacerun:yes'>&nbsp;&nbsp; </span># for example, fetch
 3htb-------------------------------------------<span
 style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span># 1.terminal<o:p></o:p></span></p>
 
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
 style='background:lightgrey;mso-highlight:lightgrey'># please set up a function
 in your ~/.<span class=SpellE>bashrc</span>, by adding</span></p>
 
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
-style='color:#4472C4;mso-themecolor:accent1'>function fetch () {https://files.rcsb.org/download/${1}.pdb}<span
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+style='color:#4472C4;mso-themecolor:accent1'>function fetch ()
+{https://files.rcsb.org/download/${1}.pdb}<span
 style='mso-spacerun:yes'>&nbsp;&nbsp; </span></span><span lang=EN-US>to the
 last line.<span style='background:lightgrey;mso-highlight:lightgrey'><o:p></o:p></span></span></p>
 
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
 style='background:lightgrey;mso-highlight:lightgrey'>2.vim $PROTEIN<span
 style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span>#please check and write down the 3-letter name of the ligand, for
 example, <b>JZ4</b><span style='mso-spacerun:yes'>&nbsp; </span># 2.terminal<o:p></o:p></span></p>
 
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
 style='color:#4472C4;mso-themecolor:accent1'>If you don't have vim, install by <span
 class=SpellE><i>sudo</i></span><i> apt install vim.</i></span><i><span
 lang=EN-US><o:p></o:p></span></i></p>
 
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
 style='background:lightgrey;mso-highlight:lightgrey'>3.pymol $PROTEIN.pdb<span
-style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span><span
-style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>#
-3.terminal<o:p></o:p></span></p>
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span># 3.terminal<o:p></o:p></span></p>
 
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
 style='color:#4472C4;mso-themecolor:accent1'>If you don't have <span
 class=SpellE>Pymol</span>, install by <span class=SpellE><i>sudo</i></span><i>
 apt install <span class=SpellE>pymol</span>.</i></span><i><span lang=EN-US><o:p></o:p></span></i></p>
 
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
 style='background:lightgrey;mso-highlight:lightgrey'>4.remove chain B, C,
 D<span style='mso-spacerun:yes'>&nbsp;
 </span>-----------------------------------------------------------<span
 style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span># 4.pymol<o:p></o:p></span></p>
 
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US>#If you
-only get a single chain, skip step 4.</span></p>
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US>#If
+you only get a single chain, skip step 4.</span></p>
 
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
 style='background:lightgrey;mso-highlight:lightgrey'>5.remove solvent<span
-style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span># 5.pymol<o:p></o:p></span></p>
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>#
+5.pymol<o:p></o:p></span></p>
 
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
 style='background:lightgrey;mso-highlight:lightgrey'>6.set seq_view,1<span
 style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span># 6.pymol<o:p></o:p></span></p>
 
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
 style='color:#4472C4;mso-themecolor:accent1'>#you should see a single lettered
 amino acid sequence appears on the screen.<o:p></o:p></span></p>
 
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
 style='background:lightgrey;mso-highlight:lightgrey'>7.select so4, PEG,<span
 style='mso-spacerun:yes'>&nbsp; </span>#click with the shift to select all
 other co-factors.<span
 style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span># 7.pymol<o:p></o:p></span></p>
 
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
 style='color:#4472C4;mso-themecolor:accent1'>These selections differ from
 protein to protein.</span><span lang=EN-US style='background:lightgrey;
 mso-highlight:lightgrey'><o:p></o:p></span></p>
 
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
 style='background:lightgrey;mso-highlight:lightgrey'>8.remove sele<span
-style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span># 8.pymol</span></p>
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>#
+8.pymol</span></p>
 
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
 style='color:#4472C4;mso-themecolor:accent1'>#This deletes all the elements you
 have selected.<o:p></o:p></span></p>
 
-<p class=MsoListParagraph align=left style='margin-left:18.0pt;text-align:left;
-text-indent:-18.0pt;mso-char-indent-count:0;mso-list:l1 level1 lfo2'><![if !supportLists]><b><span
+<p class=MsoListParagraph align=center style='margin-left:18.0pt;text-align:
+center;text-indent:-18.0pt;mso-char-indent-count:0;mso-list:l1 level1 lfo4'><![if !supportLists]><b><span
 lang=EN-US style='mso-fareast-font-family:等线;mso-fareast-theme-font:minor-latin;
 mso-bidi-font-family:等线;mso-bidi-theme-font:minor-latin;color:#7030A0'><span
 style='mso-list:Ignore'>a.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span></b><![endif]><span lang=EN-US style='color:#7030A0'>This
 is the point when you decide if you should head to Swiss-Modeler, if your
-protein is consistent with no interruption <o:p></o:p></span></p>
+protein is consistent with no interruption<o:p></o:p></span></p>
 
-<p class=MsoListParagraph align=left style='margin-left:18.0pt;text-align:left;
-text-indent:0cm;mso-char-indent-count:0'><span lang=EN-US style='color:#7030A0'>(there
-will be a &quot;-&quot; if there is an interruption in <span class=SpellE>Pymol</span>
-sequence) in the sequence, that is good and you can move on to<o:p></o:p></span></p>
+<p class=MsoListParagraph align=center style='margin-left:18.0pt;text-align:
+center;text-indent:0cm;mso-char-indent-count:0'><span lang=EN-US
+style='color:#7030A0'>(there will be a &quot;-&quot; if there is an
+interruption in <span class=SpellE>Pymol</span> sequence) in the sequence, that
+is good and you can move on to<o:p></o:p></span></p>
 
-<p class=MsoListParagraph align=left style='margin-left:18.0pt;text-align:left;
-text-indent:0cm;mso-char-indent-count:0'><span lang=EN-US style='color:#7030A0'><span
-style='mso-spacerun:yes'>&nbsp;</span>step9. If there is any broken backbone,
-please download the *.<span class=SpellE>fasta</span> from RCSB and paste it to
-swiss-modeler to generate <o:p></o:p></span></p>
+<p class=MsoListParagraph align=center style='margin-left:18.0pt;text-align:
+center;text-indent:0cm;mso-char-indent-count:0'><span lang=EN-US
+style='color:#7030A0'>step9. If there is any broken backbone, please download
+the *.<span class=SpellE>fasta</span> from RCSB and paste it to swiss-modeler
+to generate<o:p></o:p></span></p>
 
-<p class=MsoListParagraph align=left style='margin-left:18.0pt;text-align:left;
-text-indent:0cm;mso-char-indent-count:0'><span lang=EN-US style='color:#7030A0'>a
-model.pdb based on the protein itself. Then load that model.pdb into <span
-class=SpellE>pymol</span> to align to the original protein-ligand complex<b> <o:p></o:p></b></span></p>
+<p class=MsoListParagraph align=center style='margin-left:18.0pt;text-align:
+center;text-indent:0cm;mso-char-indent-count:0'><span lang=EN-US
+style='color:#7030A0'>a model.pdb based on the protein itself. Then load that
+model.pdb into <span class=SpellE>pymol</span> to align to the original
+protein-ligand complex<b><o:p></o:p></b></span></p>
 
-<p class=MsoListParagraph align=left style='margin-left:18.0pt;text-align:left;
-text-indent:0cm;mso-char-indent-count:0'><span lang=EN-US style='color:#7030A0'><o:p>&nbsp;</o:p></span></p>
+<p class=MsoListParagraph align=center style='margin-left:18.0pt;text-align:
+center;text-indent:0cm;mso-char-indent-count:0'><span lang=EN-US
+style='color:#7030A0'><o:p>&nbsp;</o:p></span></p>
 
-<p class=MsoListParagraph align=left style='margin-left:18.0pt;text-align:left;
-text-indent:-18.0pt;mso-char-indent-count:0;mso-list:l1 level1 lfo2'><![if !supportLists]><b><span
+<p class=MsoListParagraph align=center style='margin-left:18.0pt;text-align:
+center;text-indent:-18.0pt;mso-char-indent-count:0;mso-list:l1 level1 lfo4'><![if !supportLists]><b><span
 lang=EN-US style='mso-fareast-font-family:等线;mso-fareast-theme-font:minor-latin;
 mso-bidi-font-family:等线;mso-bidi-theme-font:minor-latin;color:#7030A0'><span
 style='mso-list:Ignore'>b.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
 </span></span></span></b><![endif]><span lang=EN-US style='color:#7030A0'>Just
 be careful when you do the alignment, make sure it aligns the model.pdb to your
-protein, not the other way round! <o:p></o:p></span></p>
+protein, not the other way round!<o:p></o:p></span></p>
 
-<p class=MsoListParagraph align=left style='margin-left:18.0pt;text-align:left;
-text-indent:0cm;mso-char-indent-count:0'><span lang=EN-US style='color:#7030A0'>Otherwise,
-the relative position of ligand to protein will be changed and the whole simulation
-becomes meaningless, you <o:p></o:p></span></p>
+<p class=MsoListParagraph align=center style='margin-left:18.0pt;text-align:
+center;text-indent:0cm;mso-char-indent-count:0'><span lang=EN-US
+style='color:#7030A0'>Otherwise, the relative position of ligand to protein
+will be changed and the whole simulation becomes meaningless, you<o:p></o:p></span></p>
 
-<p class=MsoNormal align=left style='text-align:left;text-indent:15.75pt;
+<p class=MsoNormal align=center style='text-align:center;text-indent:15.75pt;
 mso-char-indent-count:1.5'><span lang=EN-US style='color:#7030A0'>should type
 something like the greens next in <span class=SpellE>Pymol</span>.<i> </i></span><b><i><span
-lang=EN-US style='color:#00B050'>align model.pdb, $Protein_clean.pdb, </span></i><span
+lang=EN-US style='color:#00B050'>align model.pdb, $Protein_clean.pdb,</span></i><span
 lang=EN-US style='color:#00B050'><o:p></o:p></span></b></p>
 
-<p class=MsoNormal align=left style='text-align:left;text-indent:241.5pt;
-mso-char-indent-count:23.0'><b><i><span lang=EN-US style='color:red'>not align $Protein_clen.pdb,
-model.pdb.</span><span lang=EN-US style='color:#00B050'><o:p></o:p></span></i></b></p>
+<p class=MsoNormal align=center style='text-align:center;text-indent:241.5pt;
+mso-char-indent-count:23.0'><b><i><span lang=EN-US style='color:red'>not align
+$Protein_clen.pdb, model.pdb.</span><span lang=EN-US style='color:#00B050'><o:p></o:p></span></i></b></p>
 
-<p class=MsoListParagraph align=left style='margin-left:18.0pt;text-align:left;
-text-indent:-18.0pt;mso-char-indent-count:0;mso-list:l1 level1 lfo2'><![if !supportLists]><b><span
+<p class=MsoListParagraph align=center style='margin-left:18.0pt;text-align:
+center;text-indent:-18.0pt;mso-char-indent-count:0;mso-list:l1 level1 lfo4'><![if !supportLists]><b><span
 lang=EN-US style='mso-fareast-font-family:等线;mso-fareast-theme-font:minor-latin;
 mso-bidi-font-family:等线;mso-bidi-theme-font:minor-latin;color:#7030A0'><span
 style='mso-list:Ignore'>c.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
@@ -1373,130 +1364,129 @@ style='mso-list:Ignore'>c.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp
 by deleting the original protein, save the ligand with the model protein
 together as the clean version of <span class=SpellE>pdb</span> to use<o:p></o:p></span></p>
 
-<p class=MsoNormal align=left style='text-align:left;text-indent:10.5pt;
-mso-char-indent-count:1.0'><span lang=EN-US style='color:#7030A0'>in step 9.<b>
-<o:p></o:p></b></span></p>
+<p class=MsoNormal align=center style='text-align:center;text-indent:10.5pt;
+mso-char-indent-count:1.0'><span lang=EN-US style='color:#7030A0'>in step 9.<b><o:p></o:p></b></span></p>
 
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
 style='color:#7030A0'><o:p>&nbsp;</o:p></span></p>
 
-<p class=MsoListParagraph align=left style='margin-left:18.0pt;text-align:left;
-text-indent:-18.0pt;mso-char-indent-count:0;mso-list:l1 level1 lfo2'><![if !supportLists]><b><span
+<p class=MsoListParagraph align=center style='margin-left:18.0pt;text-align:
+center;text-indent:-18.0pt;mso-char-indent-count:0;mso-list:l1 level1 lfo4'><![if !supportLists]><b><span
 lang=EN-US style='mso-fareast-font-family:等线;mso-fareast-theme-font:minor-latin;
 mso-bidi-font-family:等线;mso-bidi-theme-font:minor-latin;color:#7030A0'><span
 style='mso-list:Ignore'>d.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
 </span></span></span></b><![endif]><span lang=EN-US style='color:#7030A0'>If
 there is a modified residue at least 6-7 angstrom away from the pocket, you
-could assume that by altering this amino acid <o:p></o:p></span></p>
+could assume that by altering this amino acid<o:p></o:p></span></p>
 
-<p class=MsoListParagraph align=left style='margin-left:18.0pt;text-align:left;
-text-indent:0cm;mso-char-indent-count:0'><span lang=EN-US style='color:#7030A0'>has
-no or little effect on ligand binding. Download the *.<span class=SpellE>fasta</span>
-from RCSB , then please use any text editor to find and replace <o:p></o:p></span></p>
+<p class=MsoListParagraph align=center style='margin-left:18.0pt;text-align:
+center;text-indent:0cm;mso-char-indent-count:0'><span lang=EN-US
+style='color:#7030A0'>has no or little effect on ligand binding. Download the
+*.<span class=SpellE>fasta</span> from RCSB , then please use any text editor
+to find and replace<o:p></o:p></span></p>
 
-<p class=MsoListParagraph align=left style='margin-left:18.0pt;text-align:left;
-text-indent:0cm;mso-char-indent-count:0'><span lang=EN-US style='color:#7030A0'>the
-modified residue to its natural version. For example, you want to replace a </span><span
-lang=EN-US style='color:#00B050'>phosphate Tyrosine (PTR) with tyrosine (TYR)</span><span
-lang=EN-US style='color:#7030A0'><o:p></o:p></span></p>
+<p class=MsoListParagraph align=center style='margin-left:18.0pt;text-align:
+center;text-indent:0cm;mso-char-indent-count:0'><span lang=EN-US
+style='color:#7030A0'>the modified residue to its natural version. For example,
+you want to replace a </span><span lang=EN-US style='color:#00B050'>phosphate
+Tyrosine (PTR) with tyrosine (TYR)</span><span lang=EN-US style='color:#7030A0'><o:p></o:p></span></p>
 
-<p class=MsoListParagraph align=left style='margin-left:18.0pt;text-align:left;
-text-indent:0cm;mso-char-indent-count:0'><span lang=EN-US style='color:#7030A0'>Next,
-do the same thing as<b> a, b, c, to use in step 9.<o:p></o:p></b></span></p>
+<p class=MsoListParagraph align=center style='margin-left:18.0pt;text-align:
+center;text-indent:0cm;mso-char-indent-count:0'><span lang=EN-US
+style='color:#7030A0'>Next, do the same thing as<b> a, b, c, to use in step 9.<o:p></o:p></b></span></p>
 
-<p class=MsoListParagraph align=left style='margin-left:18.0pt;text-align:left;
-text-indent:-18.0pt;mso-char-indent-count:0;mso-list:l1 level1 lfo2'><![if !supportLists]><b><span
+<p class=MsoListParagraph align=center style='margin-left:18.0pt;text-align:
+center;text-indent:-18.0pt;mso-char-indent-count:0;mso-list:l1 level1 lfo4'><![if !supportLists]><b><span
 lang=EN-US style='mso-fareast-font-family:等线;mso-fareast-theme-font:minor-latin;
 mso-bidi-font-family:等线;mso-bidi-theme-font:minor-latin;color:#7030A0'><span
 style='mso-list:Ignore'>e.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span></span></b><![endif]><span lang=EN-US style='color:#7030A0'>If your
-situations you happen to have a modified residue very near your pocket or even directly
-involved in binding, you should <o:p></o:p></span></p>
+</span></span></span></b><![endif]><span lang=EN-US style='color:#7030A0'>If
+your situations you happen to have a modified residue very near your pocket or
+even directly involved in binding, you should<o:p></o:p></span></p>
 
-<p class=MsoListParagraph align=left style='margin-left:18.0pt;text-align:left;
-text-indent:0cm;mso-char-indent-count:0'><span lang=EN-US style='color:#7030A0'>Leave
-it intact, try to find a patch for that residue when you do the protein
-topology generation. It will not be discussed here.<o:p></o:p></span></p>
+<p class=MsoListParagraph align=center style='margin-left:18.0pt;text-align:
+center;text-indent:0cm;mso-char-indent-count:0'><span lang=EN-US
+style='color:#7030A0'>Leave it intact, try to find a patch for that residue
+when you do the protein topology generation. It will not be discussed here.<o:p></o:p></span></p>
 
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
 style='color:red;background:silver;mso-highlight:silver'><o:p>&nbsp;</o:p></span></p>
 
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
-style='background:lightgrey;mso-highlight:lightgrey'>9.save as
+<p class=MsoNormal style='text-indent:115.5pt;mso-char-indent-count:11.0'><span
+lang=EN-US style='background:lightgrey;mso-highlight:lightgrey'>9.save as
 &quot;$PROTEIN_clean.pdb<span
 style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span>--------------------<span
-style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span><span style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;</span>9.pymol<o:p></o:p></span></p>
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>9.pymol<o:p></o:p></span></p>
 
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
-style='background:lightgrey;mso-highlight:lightgrey'>10.grep $LIG
+<p class=MsoNormal style='text-indent:115.5pt;mso-char-indent-count:11.0'><span
+lang=EN-US style='background:lightgrey;mso-highlight:lightgrey'>10.grep $LIG
 $PROTEIN_clean.pdb &gt; $lig.pdb<span
 style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span>-------------<span
 style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span>10.terminal<o:p></o:p></span></p>
 
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
 style='background:lightgrey;mso-highlight:lightgrey'>11. grep -v $LIG
 $PROTEIN_clean.pdb &gt; $PROTEIN_clean2.pdb<span
 style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span>#11.terminal<o:p></o:p></span></p>
 
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US>#<span
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US>#<span
 style='color:#ED7D31;mso-themecolor:accent2'> grep -v allow us to delete the
 ligand, since charmm36-mar2019.ff do not recognize it.</span></span></p>
 
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
 style='background:lightgrey;mso-highlight:lightgrey'>12. download
 charmm36-mar2019.ff.tgz<span
 style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span>#12.website-1<o:p></o:p></span></p>
 
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US>Website-1
-= <a href="https://www.charmm.org/charmm/resources/charmm-force-fields/">https://www.charmm.org/charmm/resources/charmm-force-fields/</a>
-</span></p>
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US>Website-1
+= <a href="https://www.charmm.org/charmm/resources/charmm-force-fields/">https://www.charmm.org/charmm/resources/charmm-force-fields/</a></span></p>
 
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
 style='background:lightgrey;mso-highlight:lightgrey'>13 tar -<span
 class=SpellE>zxvf</span> charmm36-mar2019
 -------------------------------------------------------<span
 style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span>#13.terminal<o:p></o:p></span></p>
 
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
 style='background:lightgrey;mso-highlight:lightgrey'>14 <span class=SpellE>gmx</span>
 pdb2gmx -f $PROTEIN_clean2.pdb -o $<span class=SpellE>PROTEIN_processed.gro</span>
 -----------------------------<span
 style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>#14.gromacs<o:p></o:p></span></p>
 
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
 style='background:lightgrey;mso-highlight:lightgrey'>15. &quot;1&quot;<span
 style='mso-spacerun:yes'>&nbsp; </span>&quot;1&quot; <span style='color:#ED7D31;
 mso-themecolor:accent2'># <span class=SpellE>Gromacs</span> will ask you to
 select an option twice, select 1 for both. </span><span
 style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>#15.gromacs<o:p></o:p></span></p>
 
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
 style='background:lightgrey;mso-highlight:lightgrey'><o:p>&nbsp;</o:p></span></p>
 
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
 style='background:lightgrey;mso-highlight:lightgrey'>16. <span class=SpellE>obabel</span>
 -<span class=SpellE>ipdb</span> $lig.pdb -omol2 $<span class=SpellE>lig</span>
 # the output is on screen, copy it. ----------------<span
 style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span>#16.terminal<o:p></o:p></span></p>
 
-<p class=MsoNormal align=left style='text-align:left'><i><span lang=EN-US
+<p class=MsoNormal align=center style='text-align:center'><i><span lang=EN-US
 style='color:#4472C4;mso-themecolor:accent1'>#if you don't have open babel, you
 could install by <span class=SpellE>sudo</span> apt install <span class=SpellE>openbabel</span><o:p></o:p></span></i></p>
 
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
 style='background:lightgrey;mso-highlight:lightgrey'>17. touch $lig.mol2<span
 style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span>#17 terminal<o:p></o:p></span></p>
 
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
 style='background:lightgrey;mso-highlight:lightgrey'>18. vim $lig.mol2, #use
 &quot;<span class=SpellE>i</span>&quot; to enter edit mode, paste <span
 class=SpellE>obabel</span> result.<span style='mso-spacerun:yes'>&nbsp;&nbsp;
@@ -1504,172 +1494,171 @@ class=SpellE>obabel</span> result.<span style='mso-spacerun:yes'>&nbsp;&nbsp;
 style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span>#18.terminal</span></p>
 
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
 
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
 style='background:lightgrey;mso-highlight:lightgrey'>19. download
 sort_mol2_bonds.pl -------------------------------------------------------<span
 style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span># 19.website-2=</span></p>
 
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US>Website-2
-= <a href="http://www.mdtutorials.com/gmx/complex/02_topology.html">www.mdtutorials.com/gmx/complex/02_topology.html</a>
-</span></p>
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US>Website-2
+= <a href="http://www.mdtutorials.com/gmx/complex/02_topology.html">www.mdtutorials.com/gmx/complex/02_topology.html</a></span></p>
 
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
 style='background:lightgrey;mso-highlight:lightgrey'>20. <span class=SpellE>perl</span>
 sort_mol2_bonds.pl $lig.mol2 $lig_fix.mol2 # manage the bond orders
 -------------<span
 style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span>#20.terminal<o:p></o:p></span></p>
 
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
 style='color:#ED7D31;mso-themecolor:accent2'># if you use a remote server and
 you don't have <span class=SpellE>sudo</span> permission to deal with potential<o:p></o:p></span></p>
 
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
 style='color:#ED7D31;mso-themecolor:accent2'>#errors at this step, you could do
 it locally and copy the result up to the server.<o:p></o:p></span></p>
 
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
 style='background:lightgrey;mso-highlight:lightgrey'><o:p>&nbsp;</o:p></span></p>
 
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
 style='background:lightgrey;mso-highlight:lightgrey'>21. upload $lig_fix.mol2,
 download &quot;$<span class=SpellE>lig_fix.str</span>&quot;----------------------------------------<span
-style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span><span style='mso-spacerun:yes'>&nbsp;&nbsp;</span>#21.website-3=</span></p>
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>#21.website-3=</span></p>
 
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US>Website-3=
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US>Website-3=
 <a href="https://cgenff.umaryland.edu/">https://cgenff.umaryland.edu/</a> # you
 need to register as a free user before you can use it.</span></p>
 
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
 style='background:lightgrey;mso-highlight:lightgrey'>22. download
 cgenff_charmtogmx.py3_nx2.py --------------------------------------------<span
-style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp; </span><span
-style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>22.website-1</span></p>
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>22.website-1</span></p>
 
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
 style='color:#C55A11;mso-themecolor:accent2;mso-themeshade:191;mso-style-textfill-fill-color:
 #C55A11;mso-style-textfill-fill-themecolor:accent2;mso-style-textfill-fill-alpha:
 100.0%;mso-style-textfill-fill-colortransforms:lumm=75000'>#be aware in your
 computer, it is not necessarily python3, it is not necessarily<o:p></o:p></span></p>
 
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
 style='color:#C55A11;mso-themecolor:accent2;mso-themeshade:191;mso-style-textfill-fill-color:
 #C55A11;mso-style-textfill-fill-themecolor:accent2;mso-style-textfill-fill-alpha:
 100.0%;mso-style-textfill-fill-colortransforms:lumm=75000'>#networkx2, it might
 be pyhton2 and networkx1. The website also provides two <span class=GramE>other</span><o:p></o:p></span></p>
 
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
 style='color:#C55A11;mso-themecolor:accent2;mso-themeshade:191;mso-style-textfill-fill-color:
 #C55A11;mso-style-textfill-fill-themecolor:accent2;mso-style-textfill-fill-alpha:
 100.0%;mso-style-textfill-fill-colortransforms:lumm=75000'># *<span
 class=SpellE>py</span> to download.<span style='mso-spacerun:yes'>&nbsp;
 </span>if you have a networkx3, you need to remove it first and<o:p></o:p></span></p>
 
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
 style='color:#C55A11;mso-themecolor:accent2;mso-themeshade:191;mso-style-textfill-fill-color:
 #C55A11;mso-style-textfill-fill-themecolor:accent2;mso-style-textfill-fill-alpha:
 100.0%;mso-style-textfill-fill-colortransforms:lumm=75000'>#install networkx2.3</span><span
 lang=EN-US>.</span></p>
 
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
 style='background:lightgrey;mso-highlight:lightgrey'>23. python3
 cgenff_charmtogmx_py3_nx3.py $LIG $lig_fix.mol2 &quot;$<span class=SpellE>lig_fix.str</span>&quot;
 charmm36-mar2019.ff<span
 style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span>#23.terminal</span></p>
 
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
 
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
 style='color:#C55A11;mso-themecolor:accent2;mso-themeshade:191;mso-style-textfill-fill-color:
 #C55A11;mso-style-textfill-fill-themecolor:accent2;mso-style-textfill-fill-alpha:
 100.0%;mso-style-textfill-fill-colortransforms:lumm=75000'>#similar to step 20,
 if you use a remote server, but you are not allowed to install or<o:p></o:p></span></p>
 
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
 style='color:#C55A11;mso-themecolor:accent2;mso-themeshade:191;mso-style-textfill-fill-color:
 #C55A11;mso-style-textfill-fill-themecolor:accent2;mso-style-textfill-fill-alpha:
 100.0%;mso-style-textfill-fill-colortransforms:lumm=75000'>#change the <span
 class=SpellE>networkx</span> version, please do it locally and copy the result
 to the server.<o:p></o:p></span></p>
 
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
 
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
 style='background:lightgrey;mso-highlight:lightgrey'>24. <span class=SpellE>gmx</span>
 <span class=SpellE>editconf</span> -f $lig_ini.pdb -o $<span class=SpellE>lig.gro</span>
 ------------------------------------------------ -<span
 style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span>24.gromacs<o:p></o:p></span></p>
 
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
 style='background:lightgrey;mso-highlight:lightgrey'><o:p>&nbsp;</o:p></span></p>
 
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
 style='background:lightgrey;mso-highlight:lightgrey'>25. touch <span
 class=SpellE>complex.gro</span>
 --------------------------------------------------------------------- -<span
 style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span>25.terminal<o:p></o:p></span></p>
 
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
 style='background:lightgrey;mso-highlight:lightgrey'>26. cat <span
 class=SpellE>Protein_processed.gro</span> &gt; <span class=SpellE>complex.gro</span>
 -------------------------------------------------- -<span
 style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span>26.terminal<o:p></o:p></span></p>
 
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
 style='background:lightgrey;mso-highlight:lightgrey'>27. vim $<span
 class=SpellE>lig.gro</span> and copy all &quot;LIG lines&quot;
 --------------------------------------------------<span
 style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span>27.terminal<o:p></o:p></span></p>
 
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
 style='background:lightgrey;mso-highlight:lightgrey'>28. vim <span
-class=SpellE>complex.gro</span>, insert &quot;LIG lines&quot; before last line box
-vector ----------------------- -<span
+class=SpellE>complex.gro</span>, insert &quot;LIG lines&quot; before last line
+box vector ----------------------- -<span
 style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span>28.terminal<o:p></o:p></span></p>
 
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
 style='background:lightgrey;mso-highlight:lightgrey'>29. vim <span
 class=SpellE>complex.gro</span>, change the atom numbers at the head of the
 file. ------------------------- -<span
 style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span>29.terminal<o:p></o:p></span></p>
 
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
-style='color:#ED7D31;mso-themecolor:accent2'># for example, if the number <span
-class=SpellE>orginally</span> is 5000, and you added 30 more ligand atoms, now
-it <span class=SpellE>shoud</span> be 5030.<o:p></o:p></span></p>
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+style='color:#ED7D31;mso-themecolor:accent2'># for example, if the number originally
+is 5000, and you added 30 more ligand atoms, now it should be 5030.<o:p></o:p></span></p>
 
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
 style='background:silver;mso-highlight:silver'>30. Insert </span><span
 lang=EN-US style='background:lime;mso-highlight:lime'>&quot;; Include ligand
 topology<o:p></o:p></span></p>
 
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
 style='background:lime;mso-highlight:lime'>#include &quot;<span class=SpellE>lig.itp</span>&quot;
 &quot; </span><span lang=EN-US style='background:silver;mso-highlight:silver'><span
 style='mso-spacerun:yes'>&nbsp;</span>to <span class=SpellE><i>topol.top</i></span>,
 before &quot;;<b>Include water topology</b>&quot;<span
-style='mso-spacerun:yes'>&nbsp; </span>------------------------------------------30.terminal<o:p></o:p></span></p>
+style='mso-spacerun:yes'>&nbsp;
+</span>------------------------------------------30.terminal<o:p></o:p></span></p>
 
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
 style='background:silver;mso-highlight:silver'><o:p>&nbsp;</o:p></span></p>
 
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
 style='background:silver;mso-highlight:silver'>31. Insert </span><span
 lang=EN-US style='background:lime;mso-highlight:lime'>&quot;; Include ligand
 parameters<o:p></o:p></span></p>
 
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
 style='background:lime;mso-highlight:lime'>#include &quot;<span class=SpellE>lig.prm</span>&quot;
 &quot; </span><span lang=EN-US style='background:silver;mso-highlight:silver'><span
 style='mso-spacerun:yes'>&nbsp;</span>to <span class=SpellE><i>topol.top</i></span>,
@@ -1677,10 +1666,10 @@ before &quot;[<span class=SpellE><b>moleculetype</b></span>]&quot;<span
 style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span>----------------------------------------- -31.terminal<o:p></o:p></span></p>
 
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
 style='background:yellow;mso-highlight:yellow'><o:p>&nbsp;</o:p></span></p>
 
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
 style='background:silver;mso-highlight:silver'>32. Insert</span><span
 lang=EN-US style='background:lime;mso-highlight:lime'> &quot;$LIG<span
 style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -1690,14 +1679,14 @@ style='mso-spacerun:yes'>&nbsp;</span>to <span class=SpellE><i>topol.top</i></sp
 <b>under</b> &quot;<b>[molecules</b>]&quot;--------------------------------------------
 -32.terminal<o:p></o:p></span></p>
 
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
 style='color:#ED7D31;mso-themecolor:accent2'>#replace <span class=SpellE>lig</span>
 with your ligand name for the three green blocks.<o:p></o:p></span></p>
 
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
 style='color:#ED7D31;mso-themecolor:accent2'><o:p>&nbsp;</o:p></span></p>
 
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
 style='background:lightgrey;mso-highlight:lightgrey'>33. <span class=SpellE>gmx</span>
 <span class=SpellE>editconf</span> -f <span class=SpellE>complex.gro</span> -o <span
 class=SpellE>newbox.gro</span> -<span class=SpellE>bt</span> dodecahedron -d
@@ -1705,41 +1694,42 @@ class=SpellE>newbox.gro</span> -<span class=SpellE>bt</span> dodecahedron -d
 style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span>33.gromacs<o:p></o:p></span></p>
 
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
 style='background:lightgrey;mso-highlight:lightgrey'><o:p>&nbsp;</o:p></span></p>
 
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
 style='background:lightgrey;mso-highlight:lightgrey'>34. <span class=SpellE>gmx</span>
 solvate -cp <span class=SpellE>newbox.gro</span> -cs spc216.gro -p <span
-class=SpellE>topol.top</span> -o solv.gro ------------------- -<span
+class=SpellE>topol.top</span> -o <span class=SpellE>solv.gro</span>
+------------------- -<span
 style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span>34.gromacs<o:p></o:p></span></p>
 
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
 style='background:lightgrey;mso-highlight:lightgrey'><o:p>&nbsp;</o:p></span></p>
 
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
 style='background:lightgrey;mso-highlight:lightgrey'>35. download <span
 class=SpellE>ions.mdp</span><span style='mso-spacerun:yes'>&nbsp;
 </span>-------------------------------------------------------------------<span
 style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span>35. website-2<o:p></o:p></span></p>
 
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
 style='background:lightgrey;mso-highlight:lightgrey'><o:p>&nbsp;</o:p></span></p>
 
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
 style='background:lightgrey;mso-highlight:lightgrey'>36. <span class=SpellE>gmx</span>
 <span class=SpellE>grompp</span> -f <span class=SpellE>ions.mdp</span> -c <span
 class=SpellE>solv.gro</span> -p <span class=SpellE>topol.top</span> -o <span
 class=SpellE>ions.tpr</span> -------------------------- -<span
-style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span><span style='mso-spacerun:yes'>&nbsp;&nbsp;</span>36.gromacs<o:p></o:p></span></p>
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>36.gromacs<o:p></o:p></span></p>
 
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
 style='background:lightgrey;mso-highlight:lightgrey'><o:p>&nbsp;</o:p></span></p>
 
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
 style='background:lightgrey;mso-highlight:lightgrey'>37. <span class=SpellE>gmx</span>
 <span class=SpellE>genion</span> -s <span class=SpellE>ions.tpr</span> -o <span
 class=SpellE>solv_ions.gro</span> -p <span class=SpellE>topol.top</span> -<span
@@ -1748,37 +1738,38 @@ class=SpellE>pname</span> NA -<span class=SpellE>nname</span> CL -neutral ----
 style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span>37.gromacs</span></p>
 
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
 
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
 style='color:#C55A11;mso-themecolor:accent2;mso-themeshade:191;mso-style-textfill-fill-color:
 #C55A11;mso-style-textfill-fill-themecolor:accent2;mso-style-textfill-fill-alpha:
 100.0%;mso-style-textfill-fill-colortransforms:lumm=75000'>#gromacs will ask
 you to choose, choose 15, SOL. SOL means solvents, you could <span class=GramE>chose</span>
 water as well, all the same.<o:p></o:p></span></p>
 
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
 style='background:lightgrey;mso-highlight:lightgrey'>38. download <span
 class=SpellE>em.mdp</span><span style='mso-spacerun:yes'>&nbsp;
 </span>-------------------------------------------------------------------<span
 style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span>-38. website-2<o:p></o:p></span></p>
 
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
 style='background:lightgrey;mso-highlight:lightgrey'><o:p>&nbsp;</o:p></span></p>
 
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
 style='background:lightgrey;mso-highlight:lightgrey'>39. <span class=SpellE>gmx</span>
 <span class=SpellE>grompp</span> -f <span class=SpellE>em.mdp</span> -c <span
 class=SpellE>solv_ions.gro</span> -p <span class=SpellE>topol.top</span> -o <span
 class=SpellE>em.tpr</span> ----------------------- -<span
-style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span>39. <span class=SpellE>gromacs</span><o:p></o:p></span></p>
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>39.
+<span class=SpellE>gromacs</span><o:p></o:p></span></p>
 
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
 style='background:lightgrey;mso-highlight:lightgrey'><o:p>&nbsp;</o:p></span></p>
 
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
 style='background:lightgrey;mso-highlight:lightgrey'>40. <span class=SpellE>gmx</span>
 <span class=SpellE>mdrun</span> -v -<span class=SpellE>deffnm</span> <span
 class=SpellE>em</span>
@@ -1786,38 +1777,37 @@ class=SpellE>em</span>
 style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span>40. <span class=SpellE>gromacs</span><o:p></o:p></span></p>
 
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
 style='background:lightgrey;mso-highlight:lightgrey'><o:p>&nbsp;</o:p></span></p>
 
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
 style='background:lightgrey;mso-highlight:lightgrey'>41. <span class=SpellE>gmx</span>
 <span class=SpellE>make_ndx</span> -f $<span class=SpellE>lig.gro</span> -o
 index_$<span class=SpellE>lig.ndx</span>
------------------------------------------------- <span
-style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;</span>-<span
+------------------------------------------------<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp; </span>-<span
 style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span>41. <span class=SpellE>gromacs</span></span></p>
 
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
 
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
 style='color:#C55A11;mso-themecolor:accent2;mso-themeshade:191;mso-style-textfill-fill-color:
 #C55A11;mso-style-textfill-fill-themecolor:accent2;mso-style-textfill-fill-alpha:
 100.0%;mso-style-textfill-fill-colortransforms:lumm=75000'># <span
 class=SpellE>gromacs</span> will give a list to let you choose. type as next:<o:p></o:p></span></p>
 
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
-style='background:lightgrey;mso-highlight:lightgrey'>&gt; 0 &amp; ! a H*<span
+<p class=MsoNormal style='text-indent:115.5pt;mso-char-indent-count:11.0'><span
+lang=EN-US style='background:lightgrey;mso-highlight:lightgrey'>&gt; 0 &amp; !
+a H*<span
 style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span># choose all atoms but hydrogen.<o:p></o:p></span></p>
 
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
-style='background:lightgrey;mso-highlight:lightgrey'>&gt; q<span
-style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span><span
-style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>#
-save and quit.<o:p></o:p></span></p>
+<p class=MsoNormal style='text-indent:115.5pt;mso-char-indent-count:11.0'><span
+lang=EN-US style='background:lightgrey;mso-highlight:lightgrey'>&gt; q<span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span># save and quit.<o:p></o:p></span></p>
 
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
 style='background:lightgrey;mso-highlight:lightgrey'>42. <span class=SpellE>gmx</span>
 <span class=SpellE>genrestr</span> -f $<span class=SpellE>lig.gro</span> -n
 index_$<span class=SpellE>lig.ndx</span> -o <span class=SpellE>posre</span>_$<span
@@ -1825,20 +1815,20 @@ class=SpellE>lig.itp</span> -fc 1000 1000 1000 -------<span
 style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span>42. <span class=SpellE>Gromacs</span></span></p>
 
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
 
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
 style='background:silver;mso-highlight:silver'>43. Insert</span><span
 lang=EN-US style='background:lime;mso-highlight:lime'> &quot;; Ligand position
 restraints<o:p></o:p></span></p>
 
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
 style='background:lime;mso-highlight:lime'>#ifdef POSRES<o:p></o:p></span></p>
 
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
 style='background:lime;mso-highlight:lime'>#include &quot;posre_jz4.itp&quot;<o:p></o:p></span></p>
 
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
 style='background:lime;mso-highlight:lime'>#endif &quot;<span
 style='mso-spacerun:yes'>&nbsp; </span></span><span lang=EN-US
 style='background:silver;mso-highlight:silver'>to <span class=SpellE>topol.top</span>
@@ -1847,63 +1837,59 @@ inserted at &quot;step30&quot;</span><span lang=EN-US style='background:lightgre
 mso-highlight:lightgrey'> ------------43.terminal</span><span lang=EN-US
 style='background:lime;mso-highlight:lime'><o:p></o:p></span></p>
 
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
 style='color:#ED7D31;mso-themecolor:accent2'><o:p>&nbsp;</o:p></span></p>
 
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
 style='color:#ED7D31;mso-themecolor:accent2'>#replace the name with your ligand
 name for the above green block.<o:p></o:p></span></p>
 
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
 
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
 style='color:#C55A11;mso-themecolor:accent2;mso-themeshade:191;mso-style-textfill-fill-color:
 #C55A11;mso-style-textfill-fill-themecolor:accent2;mso-style-textfill-fill-alpha:
 100.0%;mso-style-textfill-fill-colortransforms:lumm=75000'>#In this tutorial we
-only apply constrains to ligand, you could apply on both ligand and<o:p></o:p></span></p>
+only apply constrains to ligand, you could apply on both ligand and protein,
+please read carefully the tutorial of Justin.<o:p></o:p></span></p>
 
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
-style='color:#C55A11;mso-themecolor:accent2;mso-themeshade:191;mso-style-textfill-fill-color:
-#C55A11;mso-style-textfill-fill-themecolor:accent2;mso-style-textfill-fill-alpha:
-100.0%;mso-style-textfill-fill-colortransforms:lumm=75000'># protein, please
-read carefully on tutorial of Justin.<o:p></o:p></span></p>
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
 
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
-
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
 style='background:lightgrey;mso-highlight:lightgrey'>44. <span class=SpellE>gmx</span>
 <span class=SpellE>make_ndx</span> -f <span class=SpellE>em.gro</span> -o <span
 class=SpellE>index.ndx</span>
 ------------------------------------------------------ --<span
 style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span>-44. <span class=SpellE>gromacs</span><o:p></o:p></span></p>
 
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
 style='background:lightgrey;mso-highlight:lightgrey'><o:p>&nbsp;</o:p></span></p>
 
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
 style='background:lightgrey;mso-highlight:lightgrey'>&gt; 1 | 13<o:p></o:p></span></p>
 
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
 style='background:lightgrey;mso-highlight:lightgrey'>&gt; q<span
-style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span>#merge the &quot;Protein&quot; and &quot;$LIG&quot; #<span
+style='mso-spacerun:yes'>&nbsp;&nbsp; </span><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>#merge
+the &quot;Protein&quot; and &quot;$LIG&quot; #<span
 style='mso-spacerun:yes'>&nbsp; </span>This is purely for the need of later <span
 class=SpellE>nvt.mdp</span><o:p></o:p></span></p>
 
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
 style='background:lightgrey;mso-highlight:lightgrey'><o:p>&nbsp;</o:p></span></p>
 
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
 style='background:lightgrey;mso-highlight:lightgrey'>45. download <span
 class=SpellE>nvt.mdp</span>
 -------------------------------------------------------------------<span
 style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span>-45.website-2<o:p></o:p></span></p>
 
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
 style='background:lightgrey;mso-highlight:lightgrey'><o:p>&nbsp;</o:p></span></p>
 
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
 style='background:lightgrey;mso-highlight:lightgrey'>46. vim <span
 class=SpellE>nvt.mdp</span>, find &quot;<span class=SpellE>tc-grps</span> =
 Protein_JZ4 <span class=SpellE>Water_and_ions</span> &quot;
@@ -1911,17 +1897,17 @@ Protein_JZ4 <span class=SpellE>Water_and_ions</span> &quot;
 style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span>-46.terminal<o:p></o:p></span></p>
 
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
 style='background:lightgrey;mso-highlight:lightgrey'>47. replace Protein_JZ4
 with our &quot;<span class=SpellE>Protein_$LIG</span>&quot;
 -----------------------------------------<span
 style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span>-47.terminal<o:p></o:p></span></p>
 
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
 style='background:lightgrey;mso-highlight:lightgrey'><o:p>&nbsp;</o:p></span></p>
 
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
 style='background:lightgrey;mso-highlight:lightgrey'>48. <span class=SpellE>gmx</span>
 <span class=SpellE>grompp</span> -f <span class=SpellE>nvt.mdp</span> -c <span
 class=SpellE>em.gro</span> -r <span class=SpellE>em.gro</span> -p <span
@@ -1932,10 +1918,10 @@ style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span>48.gromacs<o:p></o:p></span></p>
 
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
 style='background:lightgrey;mso-highlight:lightgrey'><o:p>&nbsp;</o:p></span></p>
 
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
 style='background:lightgrey;mso-highlight:lightgrey'>49. <span class=SpellE>gmx</span>
 <span class=SpellE>mdrun</span> -<span class=SpellE>deffnm</span> <span
 class=SpellE>nvt</span><span
@@ -1944,28 +1930,28 @@ style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&
 style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span>-49.gromacs</span></p>
 
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
 style='color:#C55A11;mso-themecolor:accent2;mso-themeshade:191;mso-style-textfill-fill-color:
 #C55A11;mso-style-textfill-fill-themecolor:accent2;mso-style-textfill-fill-alpha:
 100.0%;mso-style-textfill-fill-colortransforms:lumm=75000'>#wait until the
 finish usually takes about 5 minutes, depending on your system.<o:p></o:p></span></p>
 
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
 style='color:#C55A11;mso-themecolor:accent2;mso-themeshade:191;mso-style-textfill-fill-color:
 #C55A11;mso-style-textfill-fill-themecolor:accent2;mso-style-textfill-fill-alpha:
 100.0%;mso-style-textfill-fill-colortransforms:lumm=75000'><o:p>&nbsp;</o:p></span></p>
 
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
 style='background:lightgrey;mso-highlight:lightgrey'>50. download <span
 class=SpellE>npt.mdp</span>
 -------------------------------------------------------------------<span
 style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span>-50.website-2<o:p></o:p></span></p>
 
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
 style='background:lightgrey;mso-highlight:lightgrey'><o:p>&nbsp;</o:p></span></p>
 
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
 style='background:lightgrey;mso-highlight:lightgrey'>51. vim <span
 class=SpellE>npt.mdp</span>, find &quot;<span class=SpellE>tc-grps</span> =
 Protein_JZ4 <span class=SpellE>Water_and_ions</span> &quot;
@@ -1973,28 +1959,28 @@ Protein_JZ4 <span class=SpellE>Water_and_ions</span> &quot;
 style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span>-51.terminal<o:p></o:p></span></p>
 
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
 style='background:lightgrey;mso-highlight:lightgrey'>52. replace Protein_JZ4
 with our &quot;<span class=SpellE>Protein_$LIG</span>&quot;
 -----------------------------------------<span
 style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span>-52.terminal<o:p></o:p></span></p>
 
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
 style='background:lightgrey;mso-highlight:lightgrey'><o:p>&nbsp;</o:p></span></p>
 
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
-style='background:lightgrey;mso-highlight:lightgrey'>53. <span class=SpellE>gmx</span>
-<span class=SpellE>grompp</span> -f <span class=SpellE>npt.mdp</span> -c <span
-class=SpellE>nvt.gro</span> -t <span class=SpellE>nvt.cpt</span> -r <span
+<p class=MsoNormal style='text-indent:115.5pt;mso-char-indent-count:11.0'><span
+lang=EN-US style='background:lightgrey;mso-highlight:lightgrey'>53. <span
+class=SpellE>gmx</span> <span class=SpellE>grompp</span> -f <span class=SpellE>npt.mdp</span>
+-c <span class=SpellE>nvt.gro</span> -t <span class=SpellE>nvt.cpt</span> -r <span
 class=SpellE>nvt.gro</span> -p <span class=SpellE>topol.top</span> -n <span
 class=SpellE>index.ndx</span> -o <span class=SpellE>npt.tpr</span> -53. <span
 class=SpellE>gromacs</span><o:p></o:p></span></p>
 
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
 style='background:lightgrey;mso-highlight:lightgrey'><o:p>&nbsp;</o:p></span></p>
 
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
 style='background:lightgrey;mso-highlight:lightgrey'>54. <span class=SpellE>gmx</span>
 <span class=SpellE>mdrun</span> -<span class=SpellE>deffnm</span> <span
 class=SpellE>npt</span>
@@ -2002,73 +1988,73 @@ class=SpellE>npt</span>
 style='mso-spacerun:yes'>&nbsp; </span>-<span
 style='mso-spacerun:yes'>&nbsp;&nbsp; </span>--54.gromacs</span></p>
 
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
 style='color:#C55A11;mso-themecolor:accent2;mso-themeshade:191;mso-style-textfill-fill-color:
 #C55A11;mso-style-textfill-fill-themecolor:accent2;mso-style-textfill-fill-alpha:
 100.0%;mso-style-textfill-fill-colortransforms:lumm=75000'>#wait until the
 finish usually takes about 5 minutes, depending on your system.</span></p>
 
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
 
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
 style='background:lightgrey;mso-highlight:lightgrey'>55. download <span
 class=SpellE>md.mdp</span>
 -------------------------------------------------------------------<span
 style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span>-55.website-2<o:p></o:p></span></p>
 
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
 style='background:lightgrey;mso-highlight:lightgrey'><o:p>&nbsp;</o:p></span></p>
 
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
 style='background:lightgrey;mso-highlight:lightgrey'>56. vim <span
 class=SpellE>md.mdp</span>, find &quot;<span class=SpellE>tc-grps</span> =
 Protein_JZ4 <span class=SpellE>Water_and_ions</span> &quot; --------------------------<span
 style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span>-56.terminal<o:p></o:p></span></p>
 
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
 style='background:lightgrey;mso-highlight:lightgrey'>57. replace Protein_JZ4
 with our &quot;<span class=SpellE>Protein_$LIG</span>&quot;
 -----------------------------------------<span
 style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span>-57.terminal</span></p>
 
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US># If you
-use a local laptop or workstation, you can skip the message next and move on to
-step 58.</span></p>
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US># If
+you use a local laptop or workstation, you can skip the message next and move
+on to step 58.</span></p>
 
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
 style='color:#C55A11;mso-themecolor:accent2;mso-themeshade:191;mso-style-textfill-fill-color:
 #C55A11;mso-style-textfill-fill-themecolor:accent2;mso-style-textfill-fill-alpha:
 100.0%;mso-style-textfill-fill-colortransforms:lumm=75000'>#All the above
 command is in <b>interactive mode</b> if you use a remote cluster, for the last
-step, a <b>batch mode</b> is preferred, you might <o:p></o:p></span></p>
+step, a <b>batch mode</b> is preferred, you might<o:p></o:p></span></p>
 
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
 style='color:#C55A11;mso-themecolor:accent2;mso-themeshade:191;mso-style-textfill-fill-color:
 #C55A11;mso-style-textfill-fill-themecolor:accent2;mso-style-textfill-fill-alpha:
 100.0%;mso-style-textfill-fill-colortransforms:lumm=75000'>#need to submit a
 PBS or whatever script depending on your queue system. A potential job script
-might look like the next image. <o:p></o:p></span></p>
+might look like the next image.<o:p></o:p></span></p>
 
-<p><span lang=EN-US><span style='mso-field-code:" HYPERLINK  "'><span
+<p align=center style='text-align:center'><span lang=EN-US><span
 style='color:#0563C1;mso-themecolor:hyperlink;mso-no-proof:yes'><img border=0
-width=789 height=395 id="_x0000_i1025" src="img/gromacs/gromacs.0.png"></span></span></span></p>
+width=789 height=395 id="_x0000_i1025" src="img/gromacs/gromacs.0.png"></span></span></p>
 
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
 style='color:#C55A11;mso-themecolor:accent2;mso-themeshade:191;mso-style-textfill-fill-color:
 #C55A11;mso-style-textfill-fill-themecolor:accent2;mso-style-textfill-fill-alpha:
 100.0%;mso-style-textfill-fill-colortransforms:lumm=75000'># If you want to use
 the interactive mode, the <b>X2GO</b> client is preferred instead of a direct
 SSH connection.<o:p></o:p></span></p>
 
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
 style='color:#C55A11;mso-themecolor:accent2;mso-themeshade:191;mso-style-textfill-fill-color:
 #C55A11;mso-style-textfill-fill-themecolor:accent2;mso-style-textfill-fill-alpha:
 100.0%;mso-style-textfill-fill-colortransforms:lumm=75000'><o:p>&nbsp;</o:p></span></p>
 
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
 style='background:lightgrey;mso-highlight:lightgrey'>58.gmx <span class=SpellE>grompp</span>
 -f <span class=SpellE>md.mdp</span> -c <span class=SpellE>npt.gro</span> -t <span
 class=SpellE>npt.cpt</span> -p <span class=SpellE>topol.top</span> -n <span
@@ -2076,50 +2062,48 @@ class=SpellE>index.ndx</span> -o md_0_10.tpr--------- -<span
 style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span>58. <span class=SpellE>gromacs</span><o:p></o:p></span></p>
 
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
 style='background:lightgrey;mso-highlight:lightgrey'><o:p>&nbsp;</o:p></span></p>
 
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
 style='background:lightgrey;mso-highlight:lightgrey'>59.gmx <span class=SpellE>mdrun</span>
 -<span class=SpellE>deffnm</span> md_0_10
 ------------------------------------------------------------------<span
 style='mso-spacerun:yes'>&nbsp; </span>-59. <span class=SpellE>gromacs</span>.</span></p>
 
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
 
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
 style='color:#C55A11;mso-themecolor:accent2;mso-themeshade:191;mso-style-textfill-fill-color:
 #C55A11;mso-style-textfill-fill-themecolor:accent2;mso-style-textfill-fill-alpha:
 100.0%;mso-style-textfill-fill-colortransforms:lumm=75000'>Wait until it
 finishes, based on your CPU numbers, it may take hours or even days to finish
 the<o:p></o:p></span></p>
 
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
 style='color:#C55A11;mso-themecolor:accent2;mso-themeshade:191;mso-style-textfill-fill-color:
 #C55A11;mso-style-textfill-fill-themecolor:accent2;mso-style-textfill-fill-alpha:
 100.0%;mso-style-textfill-fill-colortransforms:lumm=75000'>job. If you want a
 quicker simulation, please modify the <span class=SpellE>md.mdp</span> file to
-lower the <span class=SpellE><b>nstps</b></span> value.<o:p></o:p></span></p>
+lower the <b>steps</b> value, maybe just delete some 0.<o:p></o:p></span></p>
 
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
 
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US>If you
-encounter any errors related to <i><span style='color:red'>the <b>atom numbers</b>
-in *<span class=SpellE>gro</span> and the topology <b>does not match</b></span></i>,
-that means </span></p>
+<p class=MsoNormal style='text-indent:120.75pt;mso-char-indent-count:11.5'><span
+lang=EN-US>If you encounter any errors related to <i>the atom numbers in *<span
+class=SpellE>gro</span> and the topology does not match</i>, that means</span></p>
 
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US>You
-might have forgotten to modify the topology file in time or </span><b><span
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US>You
+might have forgotten to modify the topology file in time or </span><span
 lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt'>you have used a
-later produced topology file to do an <o:p></o:p></span></b></p>
+later produced topology file to do an<o:p></o:p></span></p>
 
-<p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-US
-style='font-size:11.0pt;mso-bidi-font-size:12.0pt'>earlier job, by accident. </span></b><span
-lang=EN-US style='font-size:11.0pt;mso-bidi-font-size:12.0pt'>The solution is,
-maybe just start over again, carefully refers to the Justin tutorial and this
-tutorial.</span></p>
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+style='font-size:11.0pt;mso-bidi-font-size:12.0pt'>earlier job, by accident. The
+solution is, maybe just start over again, carefully refers to the Justin
+tutorial and this tutorial.</span></p>
 
-<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US>##################################THE
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US>##################################THE
 END################################################</span></p>
 
 <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
