@@ -121,26 +121,26 @@ Lets type "fetch 7jrn" command, press enter, the protein shows up but as a dimer
              
             
            <p>It looks not very nice by now, next we will put the commands one by one to make it better and better. First is a cheat script applies to all proteins, the following commands are originally from from <a href="https://bionerdnotes.wordpress.com/2018/11/12/getting-high-quality-pictures-in-pymol/">Getting High Quality Pictures in PyMOL </a> with slight modification</p>  
-                <p>set bg_rgb=[1,1,1]</p>
-                <p>space cmyk</p>
-                <p>set orthoscopic, on</p>
-             
-               <p>  set ray_trace_fog=0</p>
-               <p>set depth_cue=0</p>
-                <p>util.performance(0)</p>
-                 <p>util.performance(0)</p>
-               <p>set cartoon_highlight_color, grey75</p> 
-                <p>   set antialias, 4</p>
-             
-                <p>set hash_max, 300</p>
-               <p> set internal_gui=0 </p>
-               <p>set ray_trace_mode, 1</p>
-                <p>set ray_trace_gain, 0.005</p>
-               <p> set ray_trace_color, magenta</p>
-                <p>set ray_shadows,1 </p>
-                <p>ray 2400, 2400# or 1024, 768</p>
-                <p>png ~/Desktop/coronavirous.png, width=10cm, dpi=1000, ray=1</p>
-                <p> (You can copy all the above lines, paste them in a txt file, and save the file as *.py, then go "file" > "run script" > choose the *py, click run, so all the commands run at one time)</p>
+                <pre>
+               set bg_rgb=[1,1,1]
+               pace cmyk
+               set orthoscopic, on
+               set ray_trace_fog=0
+               set depth_cue=0<
+               util.performance(0)
+               util.performance(0)
+               set cartoon_highlight_color, grey75
+               set antialias, 4
+               set hash_max, 300
+               set internal_gui=0 
+               set ray_trace_mode, 1
+               set ray_trace_gain, 0.005
+               set ray_trace_color, magenta
+               set ray_shadows,1 
+               ray 2400, 2400# or 1024, 768
+               png ~/Desktop/coronavirous.png, width=10cm, dpi=1000, ray=1</pre>
+
+                (You can copy all the above lines, paste them in a txt file, and save the file as *.py, then go "file" > "run script" > choose the *py, click run, so all the commands run at one time)
 
            <p style="text-align:center;">
             
