@@ -171,14 +171,14 @@ Last, remember, you don’t need to set any lambda at this equilibrate stage, se
  
  Type the following commands in order, for the purpose of debugg we are going to run the command in an interactive manner. (The following commands only applies under <a href="https://www.msi.umn.edu/content/job-submission-and-scheduling-pbs-scripts#:~:text=The%20queuing%20system%20which%20MSI%20uses%20is%20called,well%20as%20the%20commands%20for%20executing%20the%20calculation">PBS</a>, we used qsub to submit a job request for 32CPUs for 10 hours)
 
-<p>$ qsub -I -l select=1；ncpus=32:mem=40gb,walltime=10:00:00</p>
-<p>$ cd $PBSS_O_WOKDIR</p>
-<p>$ module load intel/18…  openmpi/3.1.2-intel namd/2.13-mpi</p> 
+<pre>$ qsub -I -l select=1；ncpus=32:mem=40gb,walltime=10:00:00
+$ cd $PBSS_O_WOKDIR
+$ module load intel/18.x.x  openmpi/3.1.2-intel namd/2.13-mpi</pre>
 (you need double check the preconditions for namd/2.13-mpi, it varies)
 
 <p>Now the software and it's running box has been loaded, let's begin with the real simulation. note you should change the running steps to a relatively small number to let the simulation finish on a reasonable time scale. I recommend you just run 500 or 5000 steps for the first time.<p/>
 
-<p>$mpirun –oversubscribe -np 4 /apps/namd/2.13-mpi/arch/Linux-x86_64-icc/namd2 +ppn 7 nvt_equil_modifiled.namd > nvt_equil.out.<p/>
+<pre>$mpirun –oversubscribe -np 4 /apps/namd/2.13-mpi/arch/Linux-x86_64-icc/namd2 +ppn 7 nvt_equil_modifiled.namd > nvt_equil.out.</pre>
 
         
             <p> (If you want to know what"--oversubscribe" does here, read more on  <a href="https://stackoverflow.com/questions/64584900/why-is-oversubscribe-necessary-for-openmpi-when-repeatedly-spawning-new-proces">Why oversubscribe necessary</a> and for changing it to another argument, potentially read
