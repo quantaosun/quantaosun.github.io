@@ -112,8 +112,11 @@ Lets type "fetch 7jrn" command, press enter, the protein shows up but as a dimer
            <p>
             There are two chains as above, to obtain a single chain, we just type "remove chain A" or "remove chain B", and press enter. You should now only have one chain left. Alternatively, you could type the following from the very beginning:</p>
             <p>
-            set assembly, 1<p/>
-            <p>fetch 7jrn, assembly 1, async=0</p>
+            <pre>
+            set assembly, 1
+            fetch 7jrn, assembly 1, async=0
+          </pre>
+        </p>
             By doing this, you also get a single chain.
                 <p style="text-align:center;"><a href="#">
             <img class="img-fluid" src="img/post10/post10.6.png" alt="">
@@ -121,6 +124,7 @@ Lets type "fetch 7jrn" command, press enter, the protein shows up but as a dimer
              
             
            <p>It looks not very nice by now, next we will put the commands one by one to make it better and better. First is a cheat script applies to all proteins, the following commands are originally from from <a href="https://bionerdnotes.wordpress.com/2018/11/12/getting-high-quality-pictures-in-pymol/">Getting High Quality Pictures in PyMOL </a> with slight modification</p>  
+           <p>
                 <pre>
                set bg_rgb=[1,1,1]
                pace cmyk
@@ -139,6 +143,7 @@ Lets type "fetch 7jrn" command, press enter, the protein shows up but as a dimer
                set ray_shadows,1 
                ray 2400, 2400# or 1024, 768
                png ~/Desktop/coronavirous.png, width=10cm, dpi=1000, ray=1</pre>
+             </p>
 
                 (You can copy all the above lines, paste them in a txt file, and save the file as *.py, then go "file" > "run script" > choose the *py, click run, so all the commands run at one time)
 
