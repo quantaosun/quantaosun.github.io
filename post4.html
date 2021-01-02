@@ -108,7 +108,7 @@ it looks like the next image.
 
 In your terminal, type 
 
-<p>pip3 install chembl_webresource_client (note, use pip3, not pip)</p>
+<pre>$ pip3 install chembl_webresource_client #note, use pip3, not pip</pre>
 
 <p>Make sure you don’t miss spell anything, please, including the bottom line. After finishing, there might be a warning message about environment variable PATH.</p>
 
@@ -119,16 +119,16 @@ In your terminal, type
 
 Let’s fix it now. In the terminal, type 
 
-<p>export PATH=/home/YOUR-NAME/.local/bin:$PATH</p>
+<pre> $ export PATH=/home/YOUR-NAME/.local/bin:$PATH</pre>
 
 you need to copy the absolute path from the yellow warning info since my computer name is “q” and obviously should be different from yours.
 
 Now let’s double check if the path has been included in $PATH, type
 
-<p>echo $PATH </p>
+<pre>echo $PATH
 
 home/q/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
-
+</pre>
 <a href="#">
             <img class="img-fluid" src="img/chembl4.png" alt="">
             </a>
@@ -183,14 +183,14 @@ Another example, imagine now you have a compound name "aspirin", you want to kno
 
 
 try the following commamds
-<p>$touch aspirin.txt<p/>
-<p>$echo asporin > aspirin.txt<p/>
-<p>$chembl_ids -i aspirin.txt -o aspirin_id</p>
+<pre>$touch aspirin.txt
+$ echo asporin > aspirin.txt
+$ chembl_ids -i aspirin.txt -o aspirin_id</pre>
 
 <p>after the finish, if you use "vi aspirin_id", you will see the chembl ID is CHEMBL25. In this simple case, the speed of using the web_client and the web browser seems not improved much, but imagine when you got a thousand molecule names, it is obviously will be easier with this web_client, what you need to do is putting all the names into a single .txt, and you will get another .txt listed all the cheml IDs.</p>
 
 <p>Let's try how to find protein target for a certain compound, still use aspirin as an example, go to command line, type:</p>
-<p>$ chembl_m2t -i id.txt -o 25 -s chembl_id -H </p>
+<pre>$ chembl_m2t -i id.txt -o 25 -s chembl_id -H </pre>
 
 <p>id.txt contains the aspirin id as CHEMBL25, 25 is  a random name I give the output, you can give any name. -H means
 only human being related targets are of interested here.
@@ -198,7 +198,7 @@ only human being related targets are of interested here.
 
 after press "ENTER" it will take several minites to give out the output named as 25, again, the name here is just name, you can name it aspirin_target if you wish.<p/>
 
-<p>$ vi 25 </p>
+<pre>$ vi 25 </pre>
 
 the next image is the output listing a lot protein IDs asscociated with UniProt database.
 
