@@ -131,12 +131,12 @@ Download the output files as files.zip.<p/>
 <h2>Step4: Transport files.zip to remote cluster</h2>
 
 <p>Fep calculation need a lot computatinal resources, you are supposed to have access to some kind of cluster or super computer which instlalled with NAMD/2.13-mpi. Use SSH command or use SFTP tools like FileZilla to transfer to your remote host. Log into your remonte host<p/> 
-<p>$ :mkdir fep </p>
-<p>$: mv files.zip fep</p>
-<p>$: cd fep</p>
-<p>$ unzip files.zip</p>
-<p>$: cd complex/</p> 
-<p>$: ls</p>
+<pre>$ :mkdir fep 
+$: mv files.zip fep
+$: cd fep
+$ unzip files.zip
+$: cd complex/ 
+$: ls</pre>
 
 
 <p>There are two branch legs, namely the "complex" and "solvent" branch, we are going to calculate the free energy changee for both of them, now we are in "complex" folder.<p/>
