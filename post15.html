@@ -77,12 +77,16 @@
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
 
-<p>This blog provide two script to improve the default NAMD input configration file generated from Feprepare web server. It is good to use this blog with the blog written on 1st December, 2020</p>
+<p>This blog provide two script to improve the default NAMD input configration file generated from Feprepare web server. It is good to use this blog with the blog written on 1st December, 2020.</p>
+<p>You could download the "file.zip" from Feprepare web server before using the scripts. To use these two scripts, in the complex or solvent directory.
+            <pre> chmod +x complex-leg-patch.sh
+                  ./complex-leg-patch.sh
+                  </pre> </p>
 
 
 
 
-           <h3> Complex leg patch script</h3>
+           <h3> complex-leg-patch.sh</h3>
             
 <P> 
 <pre>
@@ -172,8 +176,14 @@ mpirun --oversubscribe -np 4 $Fuck_NAMD/namd2 +ppn 7 md_forward_modi.namd > md_f
 
 <p/>
             <h3>
-                Solvent leg patch script</h3>
+                solvent-leg-patch.sh</h3>
             <p>
+                
+                <p> To use these two scripts, in the complex or solvent directory.
+            <pre> chmod +x solvent-leg-patch.sh
+                  ./solvent-leg-patch.sh
+                  </pre> </p>
+
     <pre>#!/bin/bash
 # This script is written for the purpose to do ligand mutation free energy pertubation. 
 # I assume you use the web server "Feprepare" to generate "all" necessary input files
