@@ -77,10 +77,13 @@
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
 
-<p>This blog provide two script to improve the default NAMD input configration file generated from Feprepare web server. It is good to use this blog with the blog written on 1st December, 2020.</p>
-<p>You could download the "file.zip" from Feprepare web server before using the scripts. To use these two scripts, in the complex or solvent directory.
-            <pre> chmod +x complex-leg-patch.sh
-                  ./complex-leg-patch.sh
+<p>This blog provides two script to improve the default NAMD input configration file generated from Feprepare web server. It is good to use this blog with the blog written on 2nd December, 2020.</p>
+<p>You could generate the "file.zip" from Feprepare web server based on your ligands of interest before using the scripts. Another two files are provided here for free downloading, all the extraction codes are 9999. One is the <a href="https://pan.baidu.com/s/1LKrbaeZv9EWYBAfIdTFXCA/">toppar file</a> which contains all the topology files need for the simulation, the other is the 
+    <a href="https://pan.baidu.com/s/1Vdc9l-dYGCEETmye-mKGIg/">parameter patch file</a>
+     . <p/>
+            <p>After the three files ready, to use these two scripts, in the complex or solvent directory.<p/>
+            <pre> $ chmod +x complex-leg-patch.sh
+                  $ ./complex-leg-patch.sh
                   </pre> </p>
 
 
@@ -91,15 +94,15 @@
 <P> 
 <pre>
 #!/bin/bash
-# This script is written for the purpose to do ligand mutation free energy pertubation. 
+# This script is written for the purpose to do ligand mutation free energy perturbation. 
 # I assume you use the web server "Feprepare" to generate "all" necessary input files
-# towards NAMD simlation. The this script can help to change the "lambda by lambda"
+# towards NAMD simulation. This script can help to change the "lambda by lambda"
 # simulation sequence to "all lambda in one" simulation, making the simulation easier
-# to handle and analysis later. The directory loactio to run this script should be 
+# to handle and analysis later. The directory location to run this script should be 
 # the "complex" or "solvent", respectively. This one is for complex leg.
 ##email to quantaosun@gmail.com if there is any issues or errors. 
 
-# It should be advised, the author of this scrpt only have priliminary knowledge of 
+# It should be advised; the author of this script only have preliminary knowledge of 
 # coding, so use this script at your own risk !
 
 ############ NVT script modification ##################################
@@ -133,7 +136,7 @@ echo "alchEquilSteps          0
 
 cat tmp2.txt >> md_forward_1.namd
 
-#To comment lines 2 through 4 of bla.conf:
+#To uncomment lines 139 through 141 to close the one by one simulation.
 
 sed -i '139,141 s/^/#/' md_forward_1.namd                         #double check the line numbers.
 
@@ -187,13 +190,13 @@ mpirun --oversubscribe -np 4 $Fuck_NAMD/namd2 +ppn 7 md_forward_modi.namd > md_f
     <pre>#!/bin/bash
 # This script is written for the purpose to do ligand mutation free energy pertubation. 
 # I assume you use the web server "Feprepare" to generate "all" necessary input files
-# towards NAMD simlation. The this script can help to change the "lambda by lambda"
+# towards NAMD simlation. This script can help to change the "lambda by lambda"
 # simulation sequence to "all lambda in one" simulation, making the simulation easier
-# to handle and analysis later. The directory loactio to run this script should be 
+# to handle and analysis later. The directory location to run this script should be 
 # the "complex" or "solvent", respectively. This one is for solvent leg.
 ##email to quantaosun@gmail.com if there is any issues or errors. 
 
-# It should be advised, the author of this scrpt only have priliminary knowledge of 
+# It should be advised; the author of this script only have preliminary knowledge of 
 # coding, so use this script at your own risk !
 
 ############ NVT script modification ##################################
@@ -227,7 +230,7 @@ echo "alchEquilSteps          0
 
 cat tmp2.txt >> md_forward_1.namd
 
-#To comment lines 2 through 4 of bla.conf:
+#To uncomment lines 139 through 141 to turn off the one by one simulation:
 
 sed -i '139,141 s/^/#/' md_forward_1.namd                         #double check the line numbers.
 
