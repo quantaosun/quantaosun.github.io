@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Quantao's Blog - Medicinal Chemistry Topics</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+  <!-- Custom styles for this template -->
+  <link href="css/clean-blog.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Never Stand Stilll</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About Me</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Blogs</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact Me</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url('img/post-bg.jpg')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+            <h1>Free Energy Pertubation with NAMD/2.13-mpi</h1>
+            <h2 class="subheading">No one would give a look at this tutorial if the GPU calculation continues to improve to a certain level</h2>
+            <span class="meta">Posted by
+              <a href="#">Quantao</a>
+              on December 02, 2020</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Post Content -->
+  <article>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          
+            <p>Molecular dynamic package <a href="http://www.ks.uiuc.edu/Research/namd/">NAMD</a> is one of the most widely used free molecular dynamic software, especially in biochemistry area,it usually use with  <a href="http://www.ks.uiuc.edu/Research/vmd/VMD/">VMD</a>. NAMD for now can only runs on Linux, VMD can runs on multiple platforms including Windows.</p>
+            <p>This tutorial is for FEP validation purpose mainly towards NAMD/2.13-mpi, it also provide a chance to test the reliability of webserver Feprepare <a href="https://feprepare.vi-seem.eu/">Feprepare</a>, which is to help users to generate input files for namd. You are expected to have basic knowledge about bash language for simple coding.<p/>
+
+<p>In a typical FEP calculation, a 16 or 32 lambda window would be applied. Here we use 16 lambada. The initial structures downloaded from PDB website, Schrodinger Maestro was used to quickly prepare the protein structure, and align the Ligand by its flexible ligand alignment.<p/>
+
+<p>We are going to use two protein-ligand structures dowloaded from the Protein Data Bank, namely 1MQ5 and 1MQ6, with ligand XLC and XLD bound.<p/>
+
+<a href="#">
+            <img class="img-fluid" src="img/alignedxlc-xld.png" alt="">
+            </a>
+ The aligned XLC and XLD in the binding site of protein target.
+
+<h2>Step 1: Files set up for LigParGen </h2>
+
+<p>Open maestro<p/>
+
+<p>File > Get PDB “1MQ5“ Download （the same for 1MQ6）
+Left click > split > by molecule (the same for 1MQ6) only keep the protein and ligands.<p/>
+
+<p>Delete other columns  Group > “group selected entries & Groups” > Create Group<p/>
+File > save project as
+
+<p>There are no H atoms in raw crystal structures, so we need to add H to both the protein and ligands.<p/>
+<p>Protein preparation > “assign bond orders, add hydrogens, create disulfide bonds. Delete waters beyond 5 angstroms from het group” > Preprocess > problems OK. <p/>
+(do the same for XLC and XLD ligands)
+Delete the old structures in time.
+<p>flexible ligand alignment > common scaffold alignment > use fuzzy matching<p/>
+<p>file > export , export the protein.pdb, XLC.pdb and XLD.pdb respectively to a folder.<p/>
+
+<h2>Step2: Files uploaded to LigParGen</h2>
+
+<a href="#">
+            <img class="img-fluid" src="img/ligpargen.png" alt="">
+            </a>
+ Sever <a href="http://zarbi.chem.yale.edu/ligpargen/index.html">LigParGen</a> is a web-based service that provides force field (FF) parameters for organic molecules or ligands, offered by the Jorgensen group.
+
+<a href="#">
+            <img class="img-fluid" src="img/ligpargen.png" alt="">
+            </a>
+ Sever <a href="http://zarbi.chem.yale.edu/ligpargen/index.html">LigParGen</a> is a web-based service that provides force field (FF) parameters for organic molecules or ligands, offered by the Jorgensen group.
+
+<p>Upload XLC.pdb to LigParGen, > submit > download *.rtf and *.prm for charm/namd<p/>
+Upload XLD.pdb, do the same thing.
+
+<p>Note since the NAMD default charmm force field can recognize all amino acids, there is no need to upload protein.pdb.<p/>
+
+<h2>Step3 :Upload output files from LigParGen to Feprepare</h2> <a href="https://feprepare.vi-seem.eu/">Feprepare</a>
+
+<p>Upload xlc.pdb, xlc.rtf, xlc.prm as reference, upload xld.pdb,xld.rtf,xld.prm as mutant.
+Upload protein.pdb (1MQ5) as protein.pdb, submit and after minutes, the job should be done.
+Download the output files as files.zip.<p/>
+
+<h2>Step4: Transport files.zip to remote cluster</h2>
+
+<p>Fep calculation need a lot computatinal resources, you are supposed to have access to some kind of cluster or super computer which instlalled with NAMD/2.13-mpi. Use SSH command or use SFTP tools like FileZilla to transfer to your remote host. Log into your remonte host<p/> 
+<pre>$ :mkdir fep 
+$ mv files.zip fep
+$ cd fep
+$ unzip files.zip
+$ cd complex/ 
+$ ls</pre>
+
+
+<p>There are two branch legs, namely the "complex" and "solvent" branch, we are going to calculate the free energy changee for both of them, now we are in "complex" folder.<p/>
+
+<a href="#">
+            <img class="img-fluid" src="img/two-legs.png" alt="">
+            </a>
+
+<h2>Step 5: Modify NAMD configuration file or .namd file.</h2>
+
+<p>Now it is time to modify the NAMD configuration file since there seem incomplete parameters listed by Feprepare Sever. Caution! This part is tricky. Though there is already some configuration file existed in the current folder but they are found incomplete or some other tiny errors. Please double-check the three following things.<p/>
+
+<h3>First</h3> 
+more parameter files need to be added to the nvt_equill.namd/npt_equil.namd as well as the md_forward.namd. Here I just copy a whole pack of parameter files originally from Charmm-Gui > Input generator > relative ligand binder. What needs to be done is copy the so-called “ toppar” file from Charm-GUI and put it in /srv/scratch/myfolder. Make sure this path is properly defined in the *namd file. 
+
+<h3>Second</h3>
+add the ‘updated.prm" as well in the "parameter" list as well, ohterwise there will be an error "XXX.atom unrecognized" happening.
+
+<h3>Third</h3>
+ Also, make sure your “toppar” folder contains this modified “water_ions.mod.str” otherwise another infamous atom type OT not found will find you !!!
+
+
+<p>Note it was found there might be a key mistake from the default *.namd file from Feprepare, that is the default value for "alchfille" was ionized.fep, but I have found the ionized.fep B column was not defining the -1 and 1 beta for those atoms need to be perturbated, while the ionzed_comple.fep should be the right one. If you want to know more, the Feprpare manual should be read.<p/>
+
+Last, remember, you don’t need to set any lambda at this equilibrate stage, set them all to 0.0, 0.0, 0.0. 
+
+ <h2>Step 6: Module load and run the scripts one by one.</h2>
+ 
+ <p>The complex leg will need 3 runs, the first being an NVT, the second being an NPT with the third being an NPT production.
+ So is the same as the solvent leg, that is to say, in total we are going to run 6 times, to get the final fep result.
+ It is assumed your remote cluster has NAMD/2.13-mpi installed.<p/>
+ 
+ Type the following commands in order, for the purpose of debugg we are going to run the command in an interactive manner. (The following commands only applies under <a href="https://www.msi.umn.edu/content/job-submission-and-scheduling-pbs-scripts#:~:text=The%20queuing%20system%20which%20MSI%20uses%20is%20called,well%20as%20the%20commands%20for%20executing%20the%20calculation">PBS</a>, we used qsub to submit a job request for 32CPUs for 10 hours)
+
+<pre>$ qsub -I -l select=1；ncpus=32:mem=40gb,walltime=10:00:00
+$ cd $PBSS_O_WOKDIR
+$ module load intel/18.x.x  openmpi/3.1.2-intel namd/2.13-mpi</pre>
+(you need double check the preconditions for namd/2.13-mpi, it varies)
+
+<p>Now the software and it's running box has been loaded, let's begin with the real simulation. note you should change the running steps to a relatively small number to let the simulation finish on a reasonable time scale. I recommend you just run 500 or 5000 steps for the first time.<p/>
+
+<pre>$mpirun –oversubscribe -np 4 /apps/namd/2.13-mpi/arch/Linux-x86_64-icc/namd2 +ppn 7 nvt_equil_modifiled.namd > nvt_equil.out.</pre>
+
+        
+            <p> (If you want to know what"--oversubscribe" does here, read more on  <a href="https://stackoverflow.com/questions/64584900/why-is-oversubscribe-necessary-for-openmpi-when-repeatedly-spawning-new-proces">Why oversubscribe necessary</a> and for changing it to another argument, potentially read
+    <a href="https://www.open-mpi.org/faq/?category=running#oversubscribing"> Can I oversubscribe nodes?</a>) <p/>
+
+the above command is tricky as well, do the math carefully, we defined the -np as 4, and defined the +ppn as 7, so 4*7=28, each np require an extra CPU for communication so, in total, we applied 28+4=32. After finish,three outputs shoule be found
+              <p>nvt_equil.coor</p>
+              <p>nvt_equil.vel</p>
+              <p>nvt_equi.xsc</p>
+and they then be put into next run: npt_equil.namd. if you want to know what "--oversubscribe" does, read more on 
+
+Now run the NPT equilbration
+
+<pre>$ mpirun –oversubscribe -np 4 /apps/namd/2.13-mpi/arch/Linux-x86_64-icc/namd2 +ppn 7 npt_equil.namd > npt_equil.out</pre>
+
+It should be ideal if we still keep lambda as triple 0 and do the equilibrium again. after finish, let us run the last production stage.
+
+<pre>$ mpirun –oversubscribe -np 4 /apps/namd/2.13-mpi/arch/Linux-x86_64-icc/namd2 +ppn 7 md_forward1.namd > md_forward1.out</pre>
+
+Please note the "Source ../fel.tcl" is turned off, you need to turn it on and change the md_forward_1.mnamd" to "md_forward_all.namd" by adding the runFEP 0.0 1.0 0.0625, since the original .namd is designed for a single lambda window.
+
+<a href="#">
+            <img class="img-fluid" src="img/fep.tcl.png" alt="">
+            </a>
+
+<h2>Step 7: Comparation with the experimental number.
+</h2>
+<p>As mentioned above, there are two branch or legs to be calculated: complex and solvent
+The calculated complex is around 46, while the solvent is around 50, so the binding free energy difference is around -4 kcal/mol. Since this is a relatively short simulation, the result is expected to be closer to -2.9 kcal/mol when time is extended. <p/>
+To be summarized, you need to go to “complex” to run the three-step simulation one by one, namely, the nvt_equil_modified.namd, npt_equil.namd and md_forward.namd, which correspond to NVT, NPT, and PRODUCTION stages respectively.
+
+<a href="#">
+            <img class="img-fluid" src="img/three-steps.png" alt="">
+            </a>
+
+Then you need to go to “solvent”, do the same procedure as in “complex”. An error has been noticed, which is a warning that the original water box is too small and the simulation aborted. In this case, it is recommended you open the npt_equil.namd and increase the “margin” from the default value 1 to 10 and try it again, so is the same for md_forward_1.namd if the same error shows up. During the NVT stage, it is unlikely to show this error.
+
+<a href="#">
+            <img class="img-fluid" src="img/xlc-xld.png" alt="">
+            </a>
+By finishing this tutorial, the XLC and XLD relative binding free energy obtained as -4 kcal/mol while the experiment value is -2.9 kcal/mol. 
+
+            <p> The next is need to visualize the simulation result in <a href="http://www.ks.uiuc.edu/Research/vmd/VMD/">VMD</a> and plot curves to evaluate the quality of the simulation. This will be done in another blog later.<p/>
+ 
+
+
+</p>
+
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <hr>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <ul class="list-inline text-center">
+            <li class="list-inline-item">
+              <a href="#">
+                <span class="fa-stack fa-lg">
+                
+                </span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#">
+                <span class="fa-stack fa-lg">
+           
+                </span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#">
+                <span class="fa-stack fa-lg">
+        
+                </span>
+              </a>
+            </li>
+          </ul>
+          <p class="copyright text-muted">Copyright &copy; https://quantaosun.github.io 2020</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="js/clean-blog.min.js"></script>
+
+</body>
+
+</html>
