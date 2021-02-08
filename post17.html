@@ -59,11 +59,11 @@
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
           <div class="post-heading">
-            <h1>Free Energy Pertubation with NAMD/2.13-mpi</h1>
-            <h2 class="subheading">No one would give a look at this tutorial if the GPU calculation continues to improve to a certain level</h2>
+            <h1>Diels-Alder reaction-- things you need to know</h1>
+            <h2 class="subheading">We are going to talk about important things about this reaction from mechanism to stereochemistry.</h2>
             <span class="meta">Posted by
               <a href="#">Quantao</a>
-              on December 02, 2020</span>
+              on February 08, 2021</span>
           </div>
         </div>
       </div>
@@ -76,156 +76,90 @@
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
           
-            <p>Molecular dynamic package <a href="http://www.ks.uiuc.edu/Research/namd/">NAMD</a> is one of the most widely used free molecular dynamic software, especially in biochemistry area,it usually use with  <a href="http://www.ks.uiuc.edu/Research/vmd/VMD/">VMD</a>. NAMD for now can only runs on Linux, VMD can runs on multiple platforms including Windows.</p>
-            <p>This tutorial is for FEP validation purpose mainly towards NAMD/2.13-mpi, it also provide a chance to test the reliability of webserver Feprepare <a href="https://feprepare.vi-seem.eu/">Feprepare</a>, which is to help users to generate input files for namd. You are expected to have basic knowledge about bash language for simple coding.<p/>
-
-<p>In a typical FEP calculation, a 16 or 32 lambda window would be applied. Here we use 16 lambada. The initial structures downloaded from PDB website, Schrodinger Maestro was used to quickly prepare the protein structure, and align the Ligand by its flexible ligand alignment.<p/>
-
-<p>We are going to use two protein-ligand structures dowloaded from the Protein Data Bank, namely 1MQ5 and 1MQ6, with ligand XLC and XLD bound.<p/>
-
-<a href="#">
-            <img class="img-fluid" src="img/alignedxlc-xld.png" alt="">
-            </a>
- The aligned XLC and XLD in the binding site of protein target.
-
-<h2>Step 1: Files set up for LigParGen </h2>
-
-<p>Open maestro<p/>
-
-<p>File > Get PDB “1MQ5“ Download （the same for 1MQ6）
-Left click > split > by molecule (the same for 1MQ6) only keep the protein and ligands.<p/>
-
-<p>Delete other columns  Group > “group selected entries & Groups” > Create Group<p/>
-File > save project as
-
-<p>There are no H atoms in raw crystal structures, so we need to add H to both the protein and ligands.<p/>
-<p>Protein preparation > “assign bond orders, add hydrogens, create disulfide bonds. Delete waters beyond 5 angstroms from het group” > Preprocess > problems OK. <p/>
-(do the same for XLC and XLD ligands)
-Delete the old structures in time.
-<p>flexible ligand alignment > common scaffold alignment > use fuzzy matching<p/>
-<p>file > export , export the protein.pdb, XLC.pdb and XLD.pdb respectively to a folder.<p/>
-
-<h2>Step2: Files uploaded to LigParGen</h2>
-
-<a href="#">
-            <img class="img-fluid" src="img/ligpargen.png" alt="">
-            </a>
- Sever <a href="http://zarbi.chem.yale.edu/ligpargen/index.html">LigParGen</a> is a web-based service that provides force field (FF) parameters for organic molecules or ligands, offered by the Jorgensen group.
-
-<a href="#">
-            <img class="img-fluid" src="img/ligpargen.png" alt="">
-            </a>
- Sever <a href="http://zarbi.chem.yale.edu/ligpargen/index.html">LigParGen</a> is a web-based service that provides force field (FF) parameters for organic molecules or ligands, offered by the Jorgensen group.
-
-<p>Upload XLC.pdb to LigParGen, > submit > download *.rtf and *.prm for charm/namd<p/>
-Upload XLD.pdb, do the same thing.
-
-<p>Note since the NAMD default charmm force field can recognize all amino acids, there is no need to upload protein.pdb.<p/>
-
-<h2>Step3 :Upload output files from LigParGen to Feprepare</h2> <a href="https://feprepare.vi-seem.eu/">Feprepare</a>
-
-<p>Upload xlc.pdb, xlc.rtf, xlc.prm as reference, upload xld.pdb,xld.rtf,xld.prm as mutant.
-Upload protein.pdb (1MQ5) as protein.pdb, submit and after minutes, the job should be done.
-Download the output files as files.zip.<p/>
-
-<h2>Step4: Transport files.zip to remote cluster</h2>
-
-<p>Fep calculation need a lot computatinal resources, you are supposed to have access to some kind of cluster or super computer which instlalled with NAMD/2.13-mpi. Use SSH command or use SFTP tools like FileZilla to transfer to your remote host. Log into your remonte host<p/> 
-<pre>$ :mkdir fep 
-$ mv files.zip fep
-$ cd fep
-$ unzip files.zip
-$ cd complex/ 
-$ ls</pre>
-
-
-<p>There are two branch legs, namely the "complex" and "solvent" branch, we are going to calculate the free energy changee for both of them, now we are in "complex" folder.<p/>
-
-<a href="#">
-            <img class="img-fluid" src="img/two-legs.png" alt="">
-            </a>
-
-<h2>Step 5: Modify NAMD configuration file or .namd file.</h2>
-
-<p>Now it is time to modify the NAMD configuration file since there seem incomplete parameters listed by Feprepare Sever. Caution! This part is tricky. Though there is already some configuration file existed in the current folder but they are found incomplete or some other tiny errors. Please double-check the three following things.<p/>
-
-<h3>First</h3> 
-more parameter files need to be added to the nvt_equill.namd/npt_equil.namd as well as the md_forward.namd. Here I just copy a whole pack of parameter files originally from Charmm-Gui > Input generator > relative ligand binder. What needs to be done is copy the so-called “ toppar” file from Charm-GUI and put it in /srv/scratch/myfolder. Make sure this path is properly defined in the *namd file. 
-
-<h3>Second</h3>
-add the ‘updated.prm" as well in the "parameter" list as well, ohterwise there will be an error "XXX.atom unrecognized" happening.
-
-<h3>Third</h3>
- Also, make sure your “toppar” folder contains this modified “water_ions.mod.str” otherwise another infamous atom type OT not found will find you !!!
-
-
-<p>Note it was found there might be a key mistake from the default *.namd file from Feprepare, that is the default value for "alchfille" was ionized.fep, but I have found the ionized.fep B column was not defining the -1 and 1 beta for those atoms need to be perturbated, while the ionzed_comple.fep should be the right one. If you want to know more, the Feprpare manual should be read.<p/>
-
-Last, remember, you don’t need to set any lambda at this equilibrate stage, set them all to 0.0, 0.0, 0.0. 
-
- <h2>Step 6: Module load and run the scripts one by one.</h2>
- 
- <p>The complex leg will need 3 runs, the first being an NVT, the second being an NPT with the third being an NPT production.
- So is the same as the solvent leg, that is to say, in total we are going to run 6 times, to get the final fep result.
- It is assumed your remote cluster has NAMD/2.13-mpi installed.<p/>
- 
- Type the following commands in order, for the purpose of debugg we are going to run the command in an interactive manner. (The following commands only applies under <a href="https://www.msi.umn.edu/content/job-submission-and-scheduling-pbs-scripts#:~:text=The%20queuing%20system%20which%20MSI%20uses%20is%20called,well%20as%20the%20commands%20for%20executing%20the%20calculation">PBS</a>, we used qsub to submit a job request for 32CPUs for 10 hours)
-
-<pre>$ qsub -I -l select=1；ncpus=32:mem=40gb,walltime=10:00:00
-$ cd $PBSS_O_WOKDIR
-$ module load intel/18.x.x  openmpi/3.1.2-intel namd/2.13-mpi</pre>
-(you need double check the preconditions for namd/2.13-mpi, it varies)
-
-<p>Now the software and it's running box has been loaded, let's begin with the real simulation. note you should change the running steps to a relatively small number to let the simulation finish on a reasonable time scale. I recommend you just run 500 or 5000 steps for the first time.<p/>
-
-<pre>$mpirun –oversubscribe -np 4 /apps/namd/2.13-mpi/arch/Linux-x86_64-icc/namd2 +ppn 7 nvt_equil_modifiled.namd > nvt_equil.out.</pre>
-
-        
-            <p> (If you want to know what"--oversubscribe" does here, read more on  <a href="https://stackoverflow.com/questions/64584900/why-is-oversubscribe-necessary-for-openmpi-when-repeatedly-spawning-new-proces">Why oversubscribe necessary</a> and for changing it to another argument, potentially read
-    <a href="https://www.open-mpi.org/faq/?category=running#oversubscribing"> Can I oversubscribe nodes?</a>) <p/>
-
-the above command is tricky as well, do the math carefully, we defined the -np as 4, and defined the +ppn as 7, so 4*7=28, each np require an extra CPU for communication so, in total, we applied 28+4=32. After finish,three outputs shoule be found
-              <p>nvt_equil.coor</p>
-              <p>nvt_equil.vel</p>
-              <p>nvt_equi.xsc</p>
-and they then be put into next run: npt_equil.namd. if you want to know what "--oversubscribe" does, read more on 
-
-Now run the NPT equilbration
-
-<pre>$ mpirun –oversubscribe -np 4 /apps/namd/2.13-mpi/arch/Linux-x86_64-icc/namd2 +ppn 7 npt_equil.namd > npt_equil.out</pre>
-
-It should be ideal if we still keep lambda as triple 0 and do the equilibrium again. after finish, let us run the last production stage.
-
-<pre>$ mpirun –oversubscribe -np 4 /apps/namd/2.13-mpi/arch/Linux-x86_64-icc/namd2 +ppn 7 md_forward1.namd > md_forward1.out</pre>
-
-Please note the "Source ../fel.tcl" is turned off, you need to turn it on and change the md_forward_1.mnamd" to "md_forward_all.namd" by adding the runFEP 0.0 1.0 0.0625, since the original .namd is designed for a single lambda window.
-
-<a href="#">
-            <img class="img-fluid" src="img/fep.tcl.png" alt="">
-            </a>
-
-<h2>Step 7: Comparation with the experimental number.
+            <p>It feels like quite impossible to not know the D-A reaction for anyone who has touched on organic chemistry, but often it feels simple also complex if you dig deeper. We are going to talk about important things about this reaction from mechanism to stereochemistry.</p>
+            
+           <p style="text-align:center;"><a href="#">
+            <img class="img-fluid" src="img/post17/1.gif" alt="">
+            </a></p>
+            
+            <p>The first thing you see in a D-A reaction is to realize that there are a diene and a dienophile, which is easy to distinguish as the diene has two double bonds. Next, we need to classify all D-A reactions into two categories, according to what are the Y group as shown above. Beware that is fairly common that the diene also brings with substituents but for the sake of simplified discussion, we only use Y group here as the way to discuss next.<p/>
+            <h2>
+            1. Normal D-A reaction, with an electron-withdrawing Y group.
 </h2>
-<p>As mentioned above, there are two branch or legs to be calculated: complex and solvent
-The calculated complex is around 46, while the solvent is around 50, so the binding free energy difference is around -4 kcal/mol. Since this is a relatively short simulation, the result is expected to be closer to -2.9 kcal/mol when time is extended. <p/>
-To be summarized, you need to go to “complex” to run the three-step simulation one by one, namely, the nvt_equil_modified.namd, npt_equil.namd and md_forward.namd, which correspond to NVT, NPT, and PRODUCTION stages respectively.
 
-<a href="#">
-            <img class="img-fluid" src="img/three-steps.png" alt="">
-            </a>
+            <p>Often, Y here is a nitro group or a carbonyl group like ester, or a nitrile group, etc.</p>
 
-Then you need to go to “solvent”, do the same procedure as in “complex”. An error has been noticed, which is a warning that the original water box is too small and the simulation aborted. In this case, it is recommended you open the npt_equil.namd and increase the “margin” from the default value 1 to 10 and try it again, so is the same for md_forward_1.namd if the same error shows up. During the NVT stage, it is unlikely to show this error.
+<p>But why in such circumstances these reactions are called normal Diels Alder rather than the other way round? Well, now we have to mention the HOMO and LUMO theory. A quick answer is the LUMO prefers an electron-withdrawing Y rather than an electron-donating Y. since the former can lower the LUMO energy to help HOMO easily flow its electrons to LUMO.<p/>
+            
+    
+            <p><a href=" https://www.organic-chemistry.org/namedreactions/diels-alder-reaction.shtm "> Diels Alder Reaction </a></p> 
+           
 
-<a href="#">
-            <img class="img-fluid" src="img/xlc-xld.png" alt="">
-            </a>
-By finishing this tutorial, the XLC and XLD relative binding free energy obtained as -4 kcal/mol while the experiment value is -2.9 kcal/mol. 
+<p>Most of the examples listed inside the above links are the "normal D-A reaction", with the Y group being an electron-withdrawing group, but as we have mentioned, there might be additional substituents on the diene as well, but all you need to know is most substituents on diene are designed to increase its HOMO, just the opposite to Y is designed to lower LUMO so that the energy gap between HOMO and LUMO is narrowed so is it possible for the reaction to happen.<p/>
 
-            <p> The next is need to visualize the simulation result in <a href="http://www.ks.uiuc.edu/Research/vmd/VMD/">VMD</a> and plot curves to evaluate the quality of the simulation. This will be done in another blog later.<p/>
+<p>But why the Diels Allder reaction could occur, given the fact that some other HOMO-LUMO systems are not under just heating but require more hash conditions like UV irradiation?</p>
+            <p>This is a bit outside the scope of the Diels-Alder reaction, but we have to discuss it here, the conception is the symmetry of the molecular orbitals(MO). For the dienophile which has only one double bond, we need it as being the LUMO, as shown in the next image, there is a HOMO as well but it is not the one we need to let the reaction occur, the important thing to remember is the two vertical orbitals inside the LUMO on the right are not symmetry, so it requires to react with an unsymmetric HOMO from diene as well. And if you have a close look at the left HOMO involved, it is not symmetric in terms of splitting the four vertical orbitals from the right middle. That is the reason why D-A reaction could just happen under heating in most cases.</p>
+            
+              <p style="text-align:center;"><a href="#">
+            <img class="img-fluid" src="img/post17/2.gif" alt="">
+            </a></p>
+
+<h2>2. Reversed A-A reaction with an electron-donating Y group. </h2>
+            <p>
+            <p style="text-align:center;"><a href="#">
+            <img class="img-fluid" src="img/post17/3.gif" alt="">
+            </a></p>
+<pre>For a reversed DA reaction, the LUMO is from the left diene side, while the HOMO is from the right side dienophile
+</pre>
+<p>If the Y group becomes an electro-donating group, and at the same time if there are some electron-withdrawing groups on the diene side, it is possible such a "reversed D-A reaction" could occur, like what we have used as a cover image, obviously, the methoxyl group is an electron-donating Y group.<p/>
+            
+             <p style="text-align:center;"><a href="#">
+            <img class="img-fluid" src="img/post17/4.jpg" alt="">
+            </a></p>
+<p> <pre> An example of reversed D-A reaction </pre>
+            </p>
+
+
+<p>But don't get it wrong that, the reversed DA reaction could just also occur under heating, not UV is further required, since the required HOMO and LUMO are already there just as in the normal DA, we don't have to create excited new HOMO as what would happen in a UV condition.<p/>
+
+<h2>3. The stereochemistry of the DA reaction</h2>
+
+<p>The next thing we need to know is the stereochemistry of the DA reaction, perhaps, people have already quite familiar with the so-called "endo selectivity", which is mostly developed by Woodward. To better understand the reaction selectivity, the ultimate important thing you want to know is that the electro-withdrawing group tends to draw itself closer to the diene system, the two just could interact with each other in a "secondary molecular orbital" sense.<p/>
+
+  <p style="text-align:center;"><a href="#">
+            <img class="img-fluid" src="img/post17/5.jpg" alt="">
+            </a></p>
+
+<pre>The image and note are from the below article.</pre>
+          
+          
+            <p><a href=" https://www.masterorganicchemistry.com/2018/05/11/endo-vs-exo-in-the-diels-alder-reaction/ "> Endo Vs Exo </a></p> 
+          
+         
+          
+<p>Just be careful here, as different people will use different methods to define what is endo, they are ultimately the same but just too many groups or ways you could adopt to describe it, i.e, some people like to use the position of the Y group while some other prefer to use substituents from the diene, to help themself track what is endo and what is Exo, just don't be confused by these different standards. In the above example, the original article uses the location of the anhydride which is just the Y group, to define the endo and exo. It is kind they have to since there is no substituents on the diene.<p/> 
+          
+<p style="text-align:center;"><a href="#">
+            <img class="img-fluid" src="img/post17/6.jpg" alt="">
+            </a></p>
+
+<pre>image is from the above internet link: Endo vs Exo</pre>
+        
+<p>As we have mentioned above, one explanation why endo is preferred even in fact it is not as less sterically hindered as exo, is that in the endo transition state, there is a potential "secondary molecular orbital" interaction, which helps lower the energy barriers between HOMO and LUMO. The next image show it better, that the rich electro from the diene kind of "flow" to the electron-withdrawing Y group. <p/>
+<p style="text-align:center;"><a href="#">
+            <img class="img-fluid" src="img/post17/7.jpg" alt="">
+            </a></p>
+<pre>images from the above internet ink : Endo vs Exo</pre>
+
  
 
+            <p> Another thing to remember is that Diels-Alder is a reversible reaction, which means the product could just decompose and move back to starting materials. This is not just a fact you want to know, but this also contributes to why the endo product is more preferred instead of the actually more stable exo product are obtained. That is even the exo is more thermodynamically stable than endo, endo is kinetically controlled or endo could forms faster than exo, by the time or extent that further heating could form some exo, it is more likely to decompose what ever the product is back to starting material, so one might just obtain not much exo product but just endo instead.<p/>
+ 
+<h2>Further reading</h2>
+          <p>The stereochemistry will become more complex if there are both substituents on diene and dienophiles, the terms like diastereoselectivity and enantioselectivity, plus the endo and exo, would be enough to create a good confusion puzzle, so just be careful when using these terms.
 
-</p>
+
+          </p>
 
         </div>
       </div>
@@ -262,7 +196,7 @@ By finishing this tutorial, the XLC and XLD relative binding free energy obtaine
               </a>
             </li>
           </ul>
-          <p class="copyright text-muted">Copyright &copy; https://quantaosun.github.io 2020</p>
+          <p class="copyright text-muted">Copyright &copy; https://quantaosun.github.io 2021</p>
         </div>
       </div>
     </div>
