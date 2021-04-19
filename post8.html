@@ -28,7 +28,7 @@
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
     <div class="container">
-      <a class="navbar-brand" href="index.html">Never Stand Still</a>
+      <a class="navbar-brand" href="index.html">Never Stand Stilll</a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         Menu
         <i class="fas fa-bars"></i>
@@ -59,12 +59,11 @@
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
           <div class="post-heading">
-            <h1>Peptide docking result can be optimised by a online server</h1>
-            <h2 class="subheading">Flex Pep Dock to improve the accuracy of flexible peptide docking</h2>
+            <h1>Absolute free energy calculation with Gromacs</h1>
+            <h2 class="subheading">This blog will be updated later to show a detailed protocal of how to calculate ABFE by Gromacs.</h2>
             <span class="meta">Posted by
               <a href="#">Quantao</a>
-              on December 10, 2020</span>
-              
+              on April 19, 2021</span>
           </div>
         </div>
       </div>
@@ -76,41 +75,23 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
-          <p> Peptide modeling is always more challenging when compared to small molecules. This primarily is due to the nature of the high flexibility of peptides. This blog introduces an online server called FlexPepDock which is designed to improve the peptide docking result.
-    <p>
-            <a href="#">
-            <img class="img-fluid" src="img/post8.0.png" alt="">
-            </a></p>
-          <p>For many drug-like small molecules there is often some kind of aromatic rings or heterocycles which means the whole molecule is rigid, while for peptide there are much more rotatable bonds from both the backbone and the side chain. The above image shows that with one more rotatable bonds comes 36 more searching for the docking algorithms if 10 degrees at one step, to cover the whole possibility of how might a  bond would be adopted.</p>
-            <p> Without no doubt, as the number of rotatable bonds increases, the steps of the docking software need to calculate just sour high quicker in an exponential manner</p>
-            <p> It is unrealistic to go through all these time-consuming steps in a common docking software like Auto Dock or Auto Dock Vina, and many more others. The output result should be further optimised to improve the accuracy, for example the <a href="http://flexpepdock.furmanlab.cs.huji.ac.il/">FlexPepDock</a> is such a platform.</p>
-            
-            <P> We are not going to dive deep into the mechanism of this protocol, but it should be fully aware this is not a peptide docking web server but a peptide docking output optimization web server, which means you should do your peptide docking beforehand by your in house software or other online dedicated tools for such purpose.    </P>  
-            <h2>Step 1.Do you peptide docking somewhere else.</h2>
-            <p><a href="#">
-            <img class="img-fluid" src="img/post8.1.png" alt="">
-            </a>
-                The image shows that from docking software or some online tools, one can get a general sense of how your peptide is likely to be bound to a certain protein. However, with all we have discussed before, the high flexibility of the peptide, together with the fact that many docking algorithms do not consider the flexibility of the protein side-chain, making the output confirmation is not so trustful.
-            
+                  
+    
+            <p><a href=" https://github.com/quantaosun/notebook "> My github notebook for absolte free energy calculation with Gromacs</a></p> 
+
+            <p> If you can't use google to download the run.sh and analysis python script, you could get these two files here(may be right click and save it):
             </p>
-            <p> <h2> Step 2. Manipulate your docking result </h2><p/>
+
             <p>
-           Now time for the real game. Let's say you got 3 plausible peptide docking results from any kind of docking software. What you need to do is to check whether the peptide and the protein in your output do exists as an individual chain or they are integrated into a single one, there should be an "A" or "B" for each of them if you can open the output in any text reader. Please manually assign a different chain name if they are all labeled as "A" or whatever a single letter chain name, to another different letter.</p>
-<p>
-            You also need to refer to any PDB file to make your output a good beginning and a good end in any text tool, for example, you may need to type words like "Module" or "End" </p>
-              <h2> Step 3. Submit the modified file to FlexPepDock</h2>
-            
-            <p> Now you just go through a quick registration process on the webserver and add your docking output to the server one by one. 
-                You are allowed to submit a maximum of 5 jobs at a time. You may need to wait for some time maybe 10 hours or a whole day until your job is done, depending on how long is the queue is.
-          
-                <a href="#">
-            <img class="img-fluid" src="img/post8.2.png" alt="">
-            </a>
-                Hope this image would give you some sense about before and after the FlexPepDock optimization, it is improved from a not aligned well position to a well-aligned position  as per on the right.<p/>
-                
-        <h2> Further Reading</h2>
-            <p>
-            According to the official illustration of the usage of this server, it is recommended that the output peptide backbone confirmation should be with the range of  5.5 angstroms to the native conformation, so the server would give out the final conformation falling within the range of 2.0 angstrom to the native one. But it might not that useful message if you are testing a whole new peptide no one knows what on earth the native binding mode is.</p>
+              <a href="img/post18/run.sh">run.sh</a>
+            </p>
+
+           <p>
+            <a href="img/post18/cp_xvg.sh">cp_xvg.sh</a>
+          </p>
+
+  
+
         </div>
       </div>
     </div>
@@ -127,29 +108,30 @@
             <li class="list-inline-item">
               <a href="#">
                 <span class="fa-stack fa-lg">
-                 
-                </span>
-              </a>
-            </li>
-            <li class="list-inline-item">
-              <a href="#">
-                <span class="fa-stack fa-lg">
-             
-                </span>
-              </a>
-            </li>
-            <li class="list-inline-item">
-              <a href="#">
-                <span class="fa-stack fa-lg">
                 
                 </span>
               </a>
             </li>
+            <li class="list-inline-item">
+              <a href="#">
+                <span class="fa-stack fa-lg">
+           
+                </span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#">
+                <span class="fa-stack fa-lg">
+        
+                </span>
+              </a>
+            </li>
           </ul>
-          <p class="copyright text-muted">Copyright &copy; https://quantaosun.github.io 2020</p>
+          <p class="copyright text-muted">Copyright &copy; https://quantaosun.github.io 2021</p>
         </div>
       </div>
     </div>
+  </footer>
 
   <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.min.js"></script>
